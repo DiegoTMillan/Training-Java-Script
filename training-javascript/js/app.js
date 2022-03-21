@@ -102,3 +102,7 @@ switch (true) {
     console.log("out of range");
 }
 
+//Exercise 1 
+
+
+
