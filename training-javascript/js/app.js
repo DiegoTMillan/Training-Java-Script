@@ -104,5 +104,96 @@ switch (true) {
 
 //Exercise 1 
 
+// let today = new Date();
+// let actMonth = today.getMonth();
+// let year = today.getFullYear();
+// daysInMonth = new Date(year, actMonth+1, 0).getDate();
+// console.log("This month has: ", daysInMonth, "days")
+// if (actMonth = 2){
+//   month = "Marzo";
+// } else {
+//   month = "cualquier mes menos marzo"
+// } 
+// console.log(month)
 
+//Exercise 2
+
+// let mesActual = prompt("Please, ask me what is the current month")
+// if (mesActual == "january" || mesActual == "enero") {
+//   alert("31 days");
+// }else if (mesActual == "february" ||  mesActual == "febrero") {
+//   alert("28 days");
+// }else if (mesActual == "march" ||  mesActual == "marzo") {
+//   alert("31 days");
+// }else if (mesActual == "april" ||  mesActual == "abril") {
+//   alert("30 days");
+// }else if (mesActual == "may" ||  mesActual == "mayo") {
+//   alert("31 days");
+// }else if (mesActual == "jun" ||  mesActual == "junio") {
+//   alert("30 days");
+// }else if (mesActual == "july" ||  mesActual == "julio") {
+//   alert("31 days");
+// }else if (mesActual == "august" ||  mesActual == "agosto") {
+//   alert("31 days");
+// }else if (mesActual == "september" ||  mesActual == "septiembre") {
+//   alert("30 days");
+// }else if (mesActual == "october"||  mesActual == "octubre") {
+//   alert("31 days");
+// }else if (mesActual == "november" ||  mesActual == "noviembre") {
+//   alert("30 days");
+// }else if (mesActual == "december" ||  mesActual == "diciembre") {
+//   alert("31 days");
+// }else {
+//   alert("That's not a real month!");
+// }
+
+//Exercise 3
+
+// let extTemperature = prompt ("What temperature is it?");
+// switch (true) {
+//   case extTemperature < 15:
+//     alert("Warm up");
+//     break;
+//   case extTemperature > 15 && extTemperature < 25:
+//     alert("Enjoy the weather!");
+//     break;
+//   case extTemperature > 25:
+//     alert("Cool down");
+//     break;
+//   default:
+//     alert("please, tell me what temperature is it");
+// }
+
+//Exercise 4
+
+// let isGreen = "centinela"
+// switch (false) {
+//   case isGreen !== "centinela":
+//     console.log("please await");
+//     break;
+//   case isGreen == "centinela":
+//     console.log("Cross the road");
+//     break;
+// }
+
+//Exercise 5
+let absoluteZero = 273.15;
+let freezingPoint = 0;
+let bodyTemperature = 37;
+let boillingPoint = 100;
+let fahrenheit = (absoluteZero*1.8)+32 || (freezingPoint*1.8)+32 || (bodyTemperature*1.8)+32 || (boillingPoint*1.8)+32;
+
+switch (result){
+  case absoluteZero == (273.15 * 1.8 + 32):
+    console.log(fahrenheit , "ºF");
+    break;
+  case freezingPoint = (0 * 1.8 + 32):
+    console.log(fahrenheit , "ºF");
+    break;
+  case bodyTemperature = (37 * 1.8 + 32):
+    console.log(fahrenheit , "ºF");
+    break;
+  case boillingPoint = (100 * 1.8 + 32):
+    console.log(fahrenheit , "ºF")
+}
 
