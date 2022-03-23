@@ -333,19 +333,33 @@
 //Exercise 10
 
 //Setting max and min possible values
-let max = 10;
-let min = 1;
-//Generation a random number between max and min
-let randomNumber1 = Math.floor(Math.random() * max) + min;
-let randomNumber2 = Math.floor(Math.random() * max) + min;
+// let max = 6;
+// let min = 1;
+// //Generation a random number between max and min
+// let randomNumber1 = Math.floor(Math.random() * max) + min;
+// let randomNumber2 = Math.floor(Math.random() * max) + min;
 
-console.log(randomNumber1);
-console.log(randomNumber2);
-if (randomNumber1 > randomNumber2){
-    console.log("Player 1 wins!");
-}else if (randomNumber1 < randomNumber2) {
-    console.log("Player 2 wins!");
-}else {
-    console.log("draw");
+// console.log(randomNumber1);
+// console.log(randomNumber2);
+// if (randomNumber1 > randomNumber2){
+//     console.log("Player 1 wins!");
+// }else if (randomNumber1 < randomNumber2) {
+//     console.log("Player 2 wins!");
+// }else {
+//     console.log("draw");
+// }
+
+//MODULE 2 LOOPS
+
+//Exercise 1
+// let string = "palindrome"
+// for (firstLetter = 0; firstLetter <= string.length; firstLetter++){
+//     console.log(string[firstLetter]);
+// }
+
+//Excercise 2
+// let string = "no lemon no melon"
+// for (lastLetter = 17; lastLetter <= string.length;){
+//     console.log(lastLetter--)
 }
- 
+
