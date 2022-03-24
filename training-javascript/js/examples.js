@@ -166,7 +166,6 @@
 
 // For loop
 
-
 // for (let count = 0; count <= 10; count++){
 //     console.log(count)
 // }
@@ -183,7 +182,7 @@
 // console.log(start, " " ,end);
 // observar que sale un número más porque el código se ejecuta así
 //1º el let, luego la comprobación booleana, luego hace el bloque de código
-//y por último actuan los contadores, de ahí la diferencia con el 
+//y por último actuan los contadores, de ahí la diferencia con el
 //mensaje final. Además para hacer funcionar los logs fuera del bloque
 //hay que declararlos antes.
 
@@ -193,3 +192,73 @@
 // for(let num = 1; num <= 10; num++){
 //     console.log(`${userValue} x ${num} = ${userValue * num}`);
 // }
+
+//BREAK explanation
+
+// let num = 0
+// for ( let i = 1; i < 10 ; i++){
+//     if ( i % 5 == 0){
+//         break;
+//     }
+// num++
+// }
+// console.log(num);
+
+// let text = "palindrome";
+// let target = "o";
+// let counter = 0;
+
+// for(let i = 0; i < text.length; i++){
+//     console.log(`iteracion ${++counter}`)
+//     if (text[i] == target){
+//       console.log("letter found")
+//       break;
+//     }
+// }
+
+//Encontrar números primos.
+
+// let isPrime = true;
+// let num = 7;
+// let counter = 0;
+
+// for (let i = 2; i < num; i++){
+//     console.log(`iteracion ${++counter}`);
+//     if (num % i == 0) {
+//         console.log("It's not a prime, divisible by: ", i);
+//         isPrime = false;
+//         break;
+//     }
+// }
+
+// aunque con una condición booleana se puede hacer también un break
+
+// let isPrime = true;
+// let num = 19;
+// let counter = 0;
+// for (let start = 2, end = 100, isPrime = true ; start < end; start++) {
+//   for (let i = 2; i < start && isPrime == true ; i++) {
+//     // console.log(`iteracion ${++counter}`);
+//     if (start % i == 0) {
+//     //   console.log("The number " + start + " is not a prime, divisible by: ", i);
+//       isPrime = false;
+//       // break;
+//     }
+//   }
+//   if (isPrime) {
+//     console.log(`the number ${start}, is prime`);
+//   }else{
+//   isPrime = true;
+//   }
+// }
+
+//CONTINUE Explanation
+
+// showing even numbers
+for (let num = -1, max = 100, counter = 0; num < max; num++) {
+  if (num % 2 != 0) {
+      continue;   
+  }
+  console.log(`${num}`);
+  console.log(`iteracion ${++counter}`);
+}

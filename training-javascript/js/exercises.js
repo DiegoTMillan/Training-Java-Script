@@ -352,14 +352,80 @@
 //MODULE 2 LOOPS
 
 //Exercise 1
+
 // let string = "palindrome"
-// for (firstLetter = 0; firstLetter <= string.length; firstLetter++){
-//     console.log(string[firstLetter]);
+// for (firstLetter = 0; firstLetter <= string.length-1; firstLetter++){
+//     console.log(`${firstLetter+1}. ${string.charAt(firstLetter)}`);
 // }
 
-//Excercise 2
+//Exercise 2
+
 // let string = "no lemon no melon"
-// for (lastLetter = 17; lastLetter <= string.length;){
-//     console.log(lastLetter--)
-}
+// let init = string.length
+// let string2 = string.split(" ").join("")
+// for (init; init >= 0; init--){
+//     console.log(`${string2.charAt(init)}`);
+// }
+
+//Exercise 3
+
+// let repeat = 4 ;
+// for (var i=0; i < repeat; i++){
+//     console.log("****");
+// }
+//Busqué la opción en la consola de desagrupar los elementos repetidos
+
+//Exercise 4
+// t17M = 20.5;
+// t18M = 18.1;
+// t19M = 18.9;
+// t20M = 18.8;
+// t21M = 19.5;
+// t22M = 19.2;
+// t23M = 18.5;
+
+// let lastDay = 23;
+// let firstDay = 17;
+// for (firstDay; firstDay <= lastDay; firstDay++) {
+//   if (firstDay <= lastDay && firstDay == 17) {
+//     console.log(`El día ${firstDay} hizo ${t17M} ºC`);
+//   }else if (firstDay <= lastDay && firstDay == 18) {
+//     console.log(`El día ${firstDay} hizo ${t18M} ºC`);
+//   }else if (firstDay <= lastDay && firstDay == 19) {
+//     console.log(`El día ${firstDay} hizo ${t19M} ºC`);
+//   }else if (firstDay <= lastDay && firstDay == 20) {
+//     console.log(`El día ${firstDay} hizo ${t20M} ºC`);
+//   }else if (firstDay <= lastDay && firstDay == 21) {
+//     console.log(`El día ${firstDay} hizo ${t21M} ºC`);
+//   }else if (firstDay <= lastDay && firstDay == 22) {
+//     console.log(`El día ${firstDay} hizo ${t22M} ºC`);
+//   }else if (firstDay <= lastDay && firstDay == 23) {
+//     console.log(`El día ${firstDay} hizo ${t23M} ºC`);
+//   }else {
+//     console.log("error 975 temperature not found");
+//   }
+// }console.log(`${((t17M + t18M + t19M + t20M + t21M + t22M + t23M) / 7).toFixed(2)} grados es la media de temperatura de la última semana`)
+
+//Exercise 5
+
+// //Setting max and min possible values
+// let max = 10;
+// let min = 0;
+// //Generation a random number between max and min
+// let randomNumber = Math.floor(Math.random() * max) + min;
+// //Let's Play
+// let chances = 3;
+// for(chances = 3; chances > 0 ; chances--){
+//     let answer = prompt(`Please, enter a number between 0 and 10, you have ${chances} chances`);
+//     if (randomNumber != answer && chances > 1){
+//         alert("Try again");
+//     }else if  (chances <= 1) {
+//         alert("Sorry, Good luck in love");
+//     }else if (randomNumber == answer){
+//         alert("You win!");
+//         break;
+//     }else {
+//         alert("don't cheat");
+//     }
+// }
 
