@@ -255,10 +255,40 @@
 //CONTINUE Explanation
 
 // showing even numbers
-for (let num = -1, max = 100, counter = 0; num < max; num++) {
-  if (num % 2 != 0) {
-      continue;   
+// for (let num = -1, max = 100, counter = 0; num < max; num++) {
+//   if (num % 2 != 0) {
+//       continue;   
+//   }
+//   console.log(`${num}`);
+//   console.log(`iteracion ${++counter}`);
+// }
+//sirve por ejemplo para hacer que los clientes que no sean de 
+//málaga sean los que salgan, así si salen los de málaga vuelve 
+//a repetir el bucle.
+
+//BUCLE DO WHILE
+let option = null;
+let colors = ["red", "green", "blue"];
+do {
+  console.log("Please, choose a color");
+  for (let index = 0; index < colors.length; index++) {
+    console.log(index + 1 + " " + colors[index]);
   }
-  console.log(`${num}`);
-  console.log(`iteracion ${++counter}`);
-}
+  console.log("Press 0 to leave");
+  option = prompt("Make your choice");
+  switch (option) {
+    case "1":
+      console.log("%cHex code for red: #FF0000", "color:#FF0000");
+      break;
+    case "2":
+      console.log("%cHex code for green: #008000", "color:#008000");
+      break;
+    case "3":
+      console.log("%cHex code for blue: #0000FF", "color:#0000FF");
+      break;
+    default:
+      console.log("Exiting, see you son!");
+      break;
+  }
+} while (option != null && option != "0");
+

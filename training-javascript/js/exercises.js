@@ -367,6 +367,16 @@
 //     console.log(`${string2.charAt(init)}`);
 // }
 
+//Teacher solution Ex2
+
+// let palindrome = "no lemon, no melon";
+// let invertPal = "";
+// for(let i = palindrome.length -1; i >= 0; i--){
+//     invertPal += palindrome[i];
+// }
+// console.log(invertPal);
+
+
 //Exercise 3
 
 // let repeat = 4 ;
@@ -374,6 +384,14 @@
 //     console.log("****");
 // }
 //Busqué la opción en la consola de desagrupar los elementos repetidos
+
+//Teacher solution
+
+// let asteriks = "";
+// for(let i = 0; i < 4; i++){
+//     asteriks += "****\n";
+// }
+// console.log(asteriks);
 
 //Exercise 4
 // t17M = 20.5;
@@ -404,28 +422,69 @@
 //   }else {
 //     console.log("error 975 temperature not found");
 //   }
-// }console.log(`${((t17M + t18M + t19M + t20M + t21M + t22M + t23M) / 7).toFixed(2)} grados es la media de temperatura de la última semana`)
+// }console.log(`${((t17M + t18M + t19M + t20M + t21M + t22M + t23M) / 7).toFixed(2)} grados es la media de temperatura de la última semana`);
+
+//Teacher solution Ex 4
+
+// let mediaTemp = 0;
+// let counter = 0;
+// for(
+//     let i = 18,
+//     mar18 = 17,
+//     mar19 = 17,
+//     mar20 = 16,
+//     mar21 = 14,
+//     mar22 = 17,
+//     mar23 = 15,
+//     mar24 = 14;
+//     i < 25;
+//     i++, counter++
+// ){
+//     mediaTemp += eval(`mar${i}`);
+// }
+// console.log("7-days Average Temperature  ", mediaTemp/counter);
 
 //Exercise 5
 
-// //Setting max and min possible values
+// // Setting max and min possible values
 // let max = 10;
 // let min = 0;
 // //Generation a random number between max and min
 // let randomNumber = Math.floor(Math.random() * max) + min;
+// console.log(randomNumber);
 // //Let's Play
 // let chances = 3;
-// for(chances = 3; chances > 0 ; chances--){
+// for(chances = 3; chances >= 1 ;chances-- ){
 //     let answer = prompt(`Please, enter a number between 0 and 10, you have ${chances} chances`);
 //     if (randomNumber != answer && chances > 1){
 //         alert("Try again");
-//     }else if  (chances <= 1) {
-//         alert("Sorry, Good luck in love");
 //     }else if (randomNumber == answer){
 //         alert("You win!");
 //         break;
 //     }else {
-//         alert("don't cheat");
+//         alert("Sorry, Good luck in love");
 //     }
 // }
+
+//Exercise 6
+
+// let string= "";
+// let numPass = prompt("Please, write the number of characters between 8 and 16 for your password")
+// let lastPass = 16;
+// let optMinus = prompt("Do you want lowercase characters? please write Yes or Not").toLowerCase();
+// let optMayus = prompt("Do you want capital letters? Please, write Yes or Not").toLowerCase();
+// let optNum = prompt("Do you want numbers? Please, write Yes or Not").toLowerCase();
+// let optSim = prompt ("Do you want symbols? Please, write Yes or Not").toLowerCase();
+// for(let i = 8; numPass < lastPass; numPass++){
+//     if (numPass = i && optMinus == "yes" || "y" && optMayus == "yes" || "y" && optNum == "yes" || "y" || optSim == "yes" || "y"){
+//         for(j=0; j < i; j++){
+//             if(string.fromCharCode(Math.floor(Math.random() * (170 - 33 + 1) + 33))){
+//                 alert(string);
+//             }
+//         }
+//     }
+// }
+
+
+
 
