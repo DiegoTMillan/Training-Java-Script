@@ -396,24 +396,49 @@
 // }
 // console.log(msg);
 
-// let msg = "";
-// let size = prompt("Enter the size of the pyramid");
-// for(let i=1; i<=size; i++)
-// {
-//   msg = msg + "* "
-//   console.log(msg);
-// }
-// let base = 10
-// for (let i = 0; i < base; i++) {
-//     let picture = "";
-//     for (let j =0; j < base - i; j++){
-//       picture += " ";
-//     }
-//     for (let k = 0; k <= i; k++){
-//       picture += "* ";
-//     }
-//     console.log(picture);
-// }
+//Drawing with asteriks
+
+let base = 8
+let base2 = 8
+for (let i = 0; i < base2; i++) {
+    let picture = " ";
+    for (let j =0; j < base2 - i; j++){
+      picture += " ";
+    }
+    for (let k = 0; k <= i; k++){
+      picture += "* ";
+    }
+    console.log(picture);
+}
+for (let i = 3; i < base; i++) {
+    let picture = " ";
+    for (let j =0; j < base - i; j++){
+      picture += " ";
+    }
+    for (let k = 0; k <= i; k++){
+      picture += "* ";
+    }
+    console.log(picture);
+}
+for (let i = 3; i < base; i++) {
+    let picture = " ";
+    for (let j =0; j < base - i; j++){
+      picture += " ";
+    }
+    for (let k = 0; k <= i; k++){
+      picture += "* ";
+    }
+    console.log(picture);
+}
+let msg = "";
+let side = 3;
+for (let i = 0; i < side; i++) {
+//   for (let j = 0; j < side; j++) {
+    msg = msg + "        ***";
+  msg = msg + "\n";
+}
+console.log(msg);
+
 
 //Teacher solution
 

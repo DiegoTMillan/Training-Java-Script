@@ -257,38 +257,202 @@
 // showing even numbers
 // for (let num = -1, max = 100, counter = 0; num < max; num++) {
 //   if (num % 2 != 0) {
-//       continue;   
+//       continue;
 //   }
 //   console.log(`${num}`);
 //   console.log(`iteracion ${++counter}`);
 // }
-//sirve por ejemplo para hacer que los clientes que no sean de 
-//málaga sean los que salgan, así si salen los de málaga vuelve 
+//sirve por ejemplo para hacer que los clientes que no sean de
+//málaga sean los que salgan, así si salen los de málaga vuelve
 //a repetir el bucle.
 
 //BUCLE DO WHILE
-let option = null;
-let colors = ["red", "green", "blue"];
-do {
-  console.log("Please, choose a color");
-  for (let index = 0; index < colors.length; index++) {
-    console.log(index + 1 + " " + colors[index]);
-  }
-  console.log("Press 0 to leave");
-  option = prompt("Make your choice");
-  switch (option) {
-    case "1":
-      console.log("%cHex code for red: #FF0000", "color:#FF0000");
-      break;
-    case "2":
-      console.log("%cHex code for green: #008000", "color:#008000");
-      break;
-    case "3":
-      console.log("%cHex code for blue: #0000FF", "color:#0000FF");
-      break;
-    default:
-      console.log("Exiting, see you son!");
-      break;
-  }
-} while (option != null && option != "0");
+// let option = null;
+// let colors = ["red", "green", "blue"];
+// do {
+//   console.log("Please, choose a color");
+//   for (let index = 0; index < colors.length; index++) {
+//     console.log(index + 1 + " " + colors[index]);
+//   }
+//   console.log("Press 0 to leave");
+//   option = prompt("Make your choice");
+//   switch (option) {
+//     case "1":
+//       console.log("%cHex code for red: #FF0000", "color:#FF0000");
+//       break;
+//     case "2":
+//       console.log("%cHex code for green: #008000", "color:#008000");
+//       break;
+//     case "3":
+//       console.log("%cHex code for blue: #0000FF", "color:#0000FF");
+//       break;
+//     default:
+//       console.log("Exiting, see you son!");
+//       break;
+//   }
+// } while (option != null && option != "0");
 
+//AN OBJECT
+
+// let star = {
+//   name: "Polaris",
+//   constellation: "Ursa Minor",
+//   type: "Double/Cepheid",
+//   spectralClass: "F7",
+//   mag: "2.0",
+// };
+// console.log(star)
+
+//Escribe un objeto person,que contenga, nombre, apellidos, edad, dirección {tipo vía,nombre vía, num, cp, localidad}, teléfono
+
+// let person = {
+//   name: "Jonhy",
+//   lastName: "MeLavo",
+//   age: 120,
+//   address: {
+//     streetType: "Avenue",
+//     nameOfStreetType: "Destiny",
+//     number: 7,
+//     cp: 17654,
+//     location: "My Dreams City",
+//   },
+//   phone: "+34 678 543 210",
+// }
+
+// person.address.location = "Madrid"//para cambiar valor
+// person.phone = {
+//   0: "+34 678 543 210",
+//   2: "+34 678 543 210",
+//   3: "+34 678 543 210",
+// }
+// console.log(person)
+
+//para variar un número habría que cambiarlo en plan person.phone[2] = número tlf
+
+//Crear un objeto llamado login con propiedades y valores siguientes:
+//id => Un número hexadecimal
+//state => logged => true or false, => true or false,
+//userName => nombre
+//loginAt => fecha y hora
+
+// let login = {
+//   id: "F7CAB89",
+//   state: {
+//     logged: false,
+//     onLine: false,
+//   },
+//   userName: "name",
+//   date: "2022/03/28 18:15:30",
+// };
+// console.log(login)
+
+// Modificar el objeto person, para que incluya un email y una contraseña
+//Una vez hechos los cambios, pide por prompt ambos datos y modifica el objeto login
+//según estos datos sea o no correctos.
+//alert de bienvenidos refiriendo el nombre
+
+// person.email = "example@example.com";
+// person.password = "password";
+
+// let userEmail = prompt("please enter you email");
+// let userPassword = prompt("please enter your password");
+// if (userEmail == person.email && userPassword == person.password) {
+//   login.state.logged = true;
+//   login.state.onLine = true;
+//   let loginInfo = new Date();
+//   let year = loginInfo.getFullYear();
+//   let month = loginInfo.getMonth()+1;
+//   let day = loginInfo.getDate();
+//   let hour = loginInfo.getHours();
+//   let min = loginInfo.getMinutes();
+//   let sec = loginInfo.getSeconds();
+//   let completeDate = `${year}/`;
+//   if(month < 10){
+//     completeDate += `0${month}/`;
+//   }else{
+//     completeDate += `${month}/`
+//   }
+//   if (day < 10){
+//     completeDate += `0${day} `;
+//   }else {
+//     completeDate += `${day} `;
+//   }
+//   if (hour < 10){
+//     completeDate += `0${hour}:`
+//   }else {
+//     completeDate += `${hour}:`
+//   }
+//   if (hour < 10){
+//     completeDate += `0${min}:`
+//   }else {
+//     completeDate += `${min}:`
+//   }
+//   if (hour < 10){
+//     completeDate += `0${sec}`
+//   }else {
+//     completeDate += `${sec}`
+//   }
+//   alert(`Welcome ${person.name} ${person.lastName}, you logged in correctly`);
+//   console.log(`login at ${completeDate}`)
+// }else{
+//   alert("Your password or email are incorrect")
+// }
+// let x = 5;
+// let y = x;
+// y = 7;
+// console.log(x);
+
+// let hero2 = hero;
+
+// hero2.character = "Hulk";
+// hero2.character = "Thor";
+// hero2.name = "Bruce Banner";
+
+// console.log(hero.character)
+
+// observar que en el primer caso de valores primitivos si se guarda x y se refiere a él
+//en el segundo se sobrescribe por no ser valores primitivos y tratarse de un objeto
+let hero = {
+  character: "Iron Man",
+  name: "Tony Stark",
+  powers: [
+    "Genius-level intellect",
+    "Multiple powered armor suits",
+    "ability to fly",
+  ],
+  info: {
+    yearCreated: 1963,
+    powerOrigin: "from his suit",
+    Weapons: ["respulsor rays", "uni-beam projector", "lasers"],
+    didYouKnow:
+      "Tony Stark created and built one of Spider-man's upgraded suits knwon as the Iron Spider Suit. We got a small glimpe of it in Spider-Man: Homecoming!",
+  },
+};
+
+let shoppingCart = {
+  shoes1: {
+    product_id: 0,
+    name: "Air Jordan",
+    price: "127 $",
+    quantity: 5,
+  },
+  shoes2: {
+    product_id: 1,
+    name: "Air Magic",
+    price: "134 $",
+    quantity: 3,
+  },
+  shoes3: {
+    product_id: 2,
+    name: "Air Bird",
+    price: "185 $",
+    quantity: 8,
+  } ,
+  shoes4: {
+    product_id: 3,
+    name: "Air Kobe",
+    price: "457 $",
+    quantity: 1,
+  },
+}
+console.log(Object.keys(shoppingCart.shoes2))
