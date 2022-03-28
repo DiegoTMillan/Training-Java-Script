@@ -403,18 +403,17 @@
 //   msg = msg + "* "
 //   console.log(msg);
 // }
-let base = 10
-for (let i = 0; i < base; i++) {
-    let picture = "";
-    for (let j =0; j < base - i; j++){
-      picture += " ";  
-    } 
-    for (let k = 0; k <= i; k++){
-      picture += "* ";  
-    } 
-    console.log(picture);  
-} 
-
+// let base = 10
+// for (let i = 0; i < base; i++) {
+//     let picture = "";
+//     for (let j =0; j < base - i; j++){
+//       picture += " ";
+//     }
+//     for (let k = 0; k <= i; k++){
+//       picture += "* ";
+//     }
+//     console.log(picture);
+// }
 
 //Teacher solution
 
@@ -499,29 +498,334 @@ for (let i = 0; i < base; i++) {
 
 //Exercise 6
 
-// let password= "";
-// let numPass = parseInt(prompt("Please, write the number of characters between 8 and 16 for your password"));
+// let password = "";
+// let numPass = parseInt(
+//   prompt(
+//     "Please, write the number of characters between 8 and 16 for your password"
+//   )
+// );
 // let lastPass = 16;
-// let optMinus = prompt("Do you want lowercase characters? please write Yes or Not").toLowerCase();
-// let optMayus = prompt("Do you want capital letters? Please, write Yes or Not").toLowerCase();
-// let optNum = prompt("Do you want numbers? Please, write Yes or Not").toLowerCase();
-// let optSim = prompt ("Do you want symbols? Please, write Yes or Not").toLowerCase();
-// for(numPass; numPass < lastPass; numPass++){
-//     if (optMinus == "yes" && optMayus == "yes" && optNum == "yes" && optSim == "yes"){
-//         for(j=0; j < numPass; j++){
-//             password += String.fromCharCode((Math.floor(Math.random() * (122 - 33 + 1) + 33)))
-//         }
-//         alert(`Your password is: ${password}`)
-//         break;
+// let optMinus = prompt(
+//   "Do you want lowercase characters? please write Yes or Not"
+// ).toLowerCase();
+// let optMayus = prompt(
+//   "Do you want capital letters? Please, write Yes or Not"
+// ).toLowerCase();
+// let optNum = prompt(
+//   "Do you want numbers? Please, write Yes or Not"
+// ).toLowerCase();
+// let optSym = prompt(
+//   "Do you want symbols? Please, write Yes or Not"
+// ).toLowerCase();
+// for (numPass; numPass < lastPass; numPass++) {
+//   if (
+//     optMinus == "yes" &&
+//     optMayus == "yes" &&
+//     optNum == "yes" &&
+//     optSym == "yes"
+//   ) {
+//     for (let i = 0; i < numPass; i++) {
+//       password += String.fromCharCode(
+//         Math.floor(Math.random() * (122 - 33 + 1) + 33)
+//       );
 //     }
-//     if (optMinus == "yes" && optMayus == "yes" && optNum == "yes" && optSim == "not"){
-//         for(j=0; j < numPass; j++){
-//             password += String.fromCharCode((Math.floor(Math.random() * (57 - 48 + 1) + 48))) && String.fromCharCode((Math.floor(Math.random() * (90 - 65 + 1) + 65))) && String.fromCharCode((Math.floor(Math.random() * (122 - 97 + 1) + 97)))
-//         }
-//         alert(`Your password is: ${password}`)
-//         break;
+//     alert(`Your password is:  ${password}`);
+//     break;
+//   } else if (
+//     optMinus == "yes" &&
+//     optMayus == "yes" &&
+//     optNum == "yes" &&
+//     optSym == "not"
+//   ) {
+//     for (i = 0; i < numPass; i++) {
+//       switch (Math.floor(Math.random() * 3) + 1) {
+//         case 1:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (57 - 48 + 1) + 48)
+//           );
+//           break;
+//         case 2:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (90 - 65 + 1) + 65)
+//           );
+//           break;
+//         case 3:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (122 - 97 + 1) + 97)
+//           );
+//           break;
+//       }
 //     }
-// }
+//     alert(`Your password is:  ${password}`);
+//     break;
+//   } else if (
+//     optMinus == "not" &&
+//     optMayus == "yes" &&
+//     optNum == "yes" &&
+//     optSym == "yes"
+//   ) {
+//     for (i = 0; i < numPass; i++) {
+//       switch (Math.floor(Math.random() * 3) + 1) {
+//         case 1:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (57 - 48 + 1) + 48)
+//           );
+//           break;
+//         case 2:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (90 - 65 + 1) + 65)
+//           );
+//           break;
+//         case 3:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (47 - 33 + 1) + 33)
+//           );
+//           break;
+//       }
+//     }
+//     alert(`Your password is:  ${password}`);
+//     break;
+//   } else if (
+//     optMinus == "yes" &&
+//     optMayus == "not" &&
+//     optNum == "yes" &&
+//     optSym == "yes"
+//   ) {
+//     for (i = 0; i < numPass; i++) {
+//       switch (Math.floor(Math.random() * 3) + 1) {
+//         case 1:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (57 - 48 + 1) + 48)
+//           );
+//           break;
+//         case 2:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (122 - 97 + 1) + 97)
+//           );
+//           break;
+//         case 3:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (47 - 33 + 1) + 33)
+//           );
+//           break;
+//       }
+//     }
+//     alert(`Your password is:  ${password}`);
+//     break;
+//   } else if (
+//     optMinus == "yes" &&
+//     optMayus == "yes" &&
+//     optNum == "not" &&
+//     optSym == "yes"
+//   ) {
+//     for (i = 0; i < numPass; i++) {
+//       switch (Math.floor(Math.random() * 3) + 1) {
+//         case 1:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (90 - 65 + 1) + 65)
+//           );
+//           break;
+//         case 2:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (122 - 97 + 1) + 97)
+//           );
+//           break;
+//         case 3:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (47 - 33 + 1) + 33)
+//           );
+//           break;
+//       }
+//     }
+//     alert(`Your password is:  ${password}`);
+//     break;
+//   } else if (
+//     optMinus == "yes" &&
+//     optMayus == "yes" &&
+//     optNum == "not" &&
+//     optSym == "not"
+//   ) {
+//     for (i = 0; i < numPass; i++) {
+//       switch (Math.floor(Math.random() * 2) + 1) {
+//         case 1:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (90 - 65 + 1) + 65)
+//           );
+//           break;
+//         case 2:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (122 - 97 + 1) + 97)
+//           );
+//           break;
+//       }
+//     }
+//     alert(`Your password is:  ${password}`);
+//     break;
+//   } else if (
+//     optMinus == "yes" &&
+//     optMayus == "yes" &&
+//     optNum == "not" &&
+//     optSym == "not"
+//   ) {
+//     for (i = 0; i < numPass; i++) {
+//       switch (Math.floor(Math.random() * 2) + 1) {
+//         case 1:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (57 - 48 + 1) + 48)
+//           );
+//           break;
+//         case 2:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (47 - 33 + 1) + 33)
+//           );
+//           break;
+//       }
+//     }
+//     alert(`Your password is:  ${password}`);
+//     break;
+//   } else if (
+//     optMinus == "yes" &&
+//     optMayus == "not" &&
+//     optNum == "yes" &&
+//     optSym == "not"
+//   ) {
+//     for (i = 0; i < numPass; i++) {
+//       switch (Math.floor(Math.random() * 2) + 1) {
+//         case 1:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (122 - 97 + 1) + 97)
+//           );
+//           break;
+//         case 2:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (57 - 48 + 1) + 48)
+//           );
+//           break;
+//       }
+//     }
+//     alert(`Your password is:  ${password}`);
+//     break;
+//   } else if (
+//     optMinus == "not" &&
+//     optMayus == "yes" &&
+//     optNum == "not" &&
+//     optSym == "yes"
+//   ) {
+//     for (i = 0; i < numPass; i++) {
+//       switch (Math.floor(Math.random() * 2) + 1) {
+//         case 1:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (90 - 65 + 1) + 65)
+//           );
+//           break;
+//         case 2:
+//           password += String.fromCharCode(
+//             Math.floor(Math.random() * (47 - 33 + 1) + 33)
+//           );
+//           break;
+//       }
+//     }
+//     alert(`Your password is:  ${password}`);
+//     break;
+//   } else if (
+//     optMinus == "yes" &&
+//     optMayus == "not" &&
+//     optNum == "not" &&
+//     optSym == "not"
+//   ) {
+//     for (i = 0; i < numPass; i++) {
+//       password += String.fromCharCode(
+//         Math.floor(Math.random() * (122 - 97 + 1) + 97)
+//       );
+//     }
+//     alert(`Your password is:  ${password}`);
+//     break;
+//   } else if (
+//     optMinus == "not" &&
+//     optMayus == "yes" &&
+//     optNum == "not" &&
+//     optSym == "not"
+//   ) {
+//     for (i = 0; i < numPass; i++) {
+//       password += String.fromCharCode(
+//         Math.floor(Math.random() * (90 - 65 + 1) + 65)
+//       );
+//     }
+//     alert(`Your password is:  ${password}`);
+//     break;
+//   } else if (
+//     optMinus == "not" &&
+//     optMayus == "not" &&
+//     optNum == "yes" &&
+//     optSym == "not"
+//   ) {
+//     for (i = 0; i < numPass; i++) {
+//       password += String.fromCharCode(
+//         Math.floor(Math.random() * (57 - 48 + 1) + 48)
+//       );
+//     }
+//     alert(`Your password is:  ${password}`);
+//     break;
+//   } else if (
+//     optMinus == "not" &&
+//     optMayus == "not" &&
+//     optNum == "not" &&
+//     optSym == "yes"
+//   ) {
+//     for (let i = 0; i < numPass; i++) {
+//       password += String.fromCharCode(
+//         Math.floor(Math.random() * (47 - 33 + 1) + 33)
+//       );
+//     }
+//     alert(`Your password is:  ${password}`);
+//     break;
+//   } else if (
+//     optMinus == "not" &&
+//     optMayus == "not" &&
+//     optNum == "not" &&
+//     optSym == "not"
+//   ) {
+//     for (i = 0; i < numPass; i++) {
+//       password += String.fromCharCode(
+//         Math.floor(Math.random() * (122 - 97 + 1) + 97)
+//       );
+//     }
+//     alert(`Your password is:  ${password}`);
+//     break;
+//   }else{
+//       alert("error del copón")
+//       break;
+//   }
+  //   if (
+  //     (optMinus =
+  //       "yes" && optMayus == "yes" && optNum == "yes" && optSim == "not")
+  //   ) {
+  //     for (j = 0; j < numPass; j++) {
+  //       password += String.fromCharCode(
+  //         Math.floor(Math.random() * (57 - 48 + 1) + 48) ||
+  //           Math.floor(Math.random() * (90 - 65 + 1) + 65) ||
+  //           Math.floor(Math.random() * (122 - 97 + 1) + 97)
+  //       );
+  //       alert(`Your password is: ${password}`);
+  //     break;
+  //     }
+  //   }
+
+  //   if (
+  //     optMinus == "yes" &&
+  //     optMayus == "yes" &&
+  //     optNum == "yes" &&
+  //     optSim == "yes"
+  //   ) {
+  //     for (j = 0; j < numPass; j++) {
+  //       password += String.fromCharCode(
+  //         Math.floor(Math.random() * (122 - 33 + 1) + 33)
+  //       );
+  //       alert(`Your password is: ${password}`);
+  //     break;
+  //     }
+  //   }
+//}
 
 // Exercise 6
 
