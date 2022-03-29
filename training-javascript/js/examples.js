@@ -303,7 +303,6 @@
 // };
 // console.log(star)
 
-
 // let x = 5;
 // let y = x;
 // y = 7;
@@ -339,37 +338,225 @@
 
 //observar que powers se trata de un array pues tiene varios valores guardados para el mismo atributo.
 
-let shoppingCart = {
-  shoes1: {
-    product_id: 0,
-    name: "Air Jordan",
-    price: "127$",
-    quantity: 5,
-  },
-  shoes2: {
-    product_id: 1,
-    name: "Air Magic",
-    price: "134$",
-    quantity: 3,
-  },
-  shoes3: {
-    product_id: 2,
-    name: "Air Bird",
-    price: "185$",
-    quantity: 8,
-  } ,
-  shoes4: {
-    product_id: 3,
-    name: "Air Kobe",
-    price: "457$",
-    quantity: 1,
-  },
-}
-let shoes4 = new Object(shoppingCart.shoes1);
-console.log(shoes4)
+// let shoppingCart = {
+//   shoes1: {
+//     product_id: 0,
+//     name: "Air Jordan",
+//     price: "127$",
+//     quantity: 5,
+//   },
+//   shoes2: {
+//     product_id: 1,
+//     name: "Air Magic",
+//     price: "134$",
+//     quantity: 3,
+//   },
+//   shoes3: {
+//     product_id: 2,
+//     name: "Air Bird",
+//     price: "185$",
+//     quantity: 8,
+//   } ,
+//   shoes4: {
+//     product_id: 3,
+//     name: "Air Chamberlain",
+//     price: "457$",
+//     quantity: 1,
+//   },
+// }
+// let shoes4 = new Object(shoppingCart.shoes1);
+// console.log(Object.keys(shoppingCart.shoes2))
+// console.log("       id: " + shoppingCart.shoes1.product_id + " name: " + shoppingCart.shoes1.name + " " + shoppingCart.shoes1.price + " " + shoppingCart.shoes1.quantity + " quantity");
+// console.log("       id: " + shoppingCart.shoes2.product_id + " name: " + shoppingCart.shoes2.name + " " + shoppingCart.shoes2.price + " " + shoppingCart.shoes2.quantity + " quantity");
+// console.log("       id: " + shoppingCart.shoes3.product_id + " name: " + shoppingCart.shoes3.name + " " + shoppingCart.shoes3.price + " " + shoppingCart.shoes3.quantity + " quantity");
+// console.log("       id: " + shoppingCart.shoes4.product_id + " name: " + shoppingCart.shoes4.name + " " + shoppingCart.shoes4.price + " " + shoppingCart.shoes4.quantity + " quantity");
 
-console.log(Object.keys(shoppingCart.shoes2))
-console.log("       id: " + shoppingCart.shoes1.product_id + " name: " + shoppingCart.shoes1.name + " " + shoppingCart.shoes1.price + " " + shoppingCart.shoes1.quantity + " quantity");
-console.log("       id: " + shoppingCart.shoes2.product_id + " name: " + shoppingCart.shoes2.name + " " + shoppingCart.shoes2.price + " " + shoppingCart.shoes2.quantity + " quantity")
-console.log("       id: " + shoppingCart.shoes3.product_id + " name: " + shoppingCart.shoes3.name + " " + shoppingCart.shoes3.price + " " + shoppingCart.shoes3.quantity + " quantity")
-console.log("       id: " + shoppingCart.shoes4.product_id + " name: " + shoppingCart.shoes4.name + " " + shoppingCart.shoes4.price + " " + shoppingCart.shoes4.quantity + " quantity")
+//Loop solution
+
+// for (let i = 0; i < Object.keys(shoppingCart).length; i++) {
+//   for (
+//     let j = 0;
+//     j < Object.keys(shoppingCart[Object.keys(shoppingCart)[i]]).length;
+//     j++
+//   ) {
+//     console.log(`${Object.keys(shoppingCart[Object.keys(shoppingCart)[i]])[j]}:
+//   ${
+//     shoppingCart[Object.keys(shoppingCart)[i]][
+//       Object.keys(shoppingCart[Object.keys(shoppingCart)[i]])[j]
+//     ]
+//   }
+//   `);
+//   }
+// }
+
+//Easier solution
+
+// shoppingCart = {
+//   0: {
+//   product_id: 0,
+//   name: "Nike Air max",
+//   price: "150$",
+//   quantity: "1",
+//   },
+//   1: {
+//   product_id: 1,
+//   name: "Nike Air force",
+//   price: "160$",
+//   quantity: "5",
+//   },
+//   2: {
+//   product_id: 2,
+//   name: "Nike Air jordan",
+//   price: "170$",
+//   quantity: "9",
+//   },
+//   3: {
+//   product_id: 3,
+//   name: "Nike Air",
+//   price: "180$",
+//   quantity: "2",
+//   },
+//   };
+//   for (let i = 0; i < Object.keys(shoppingCart).length; i++) {
+//   let id = shoppingCart[i].product_id;
+//   let name = shoppingCart[i].name;
+//   console.log("id: ", id, " name: ", name);
+//   }
+
+//Array literal
+
+// let empty = []; // un array vacio
+// let colors2 = ["red", "blue","green"];
+// let combinedElements = [1.1, true, "Hello"];//mixto
+
+// let original = [1, 2, 3];
+// let originalIncreased = [0, ...original, 4];
+// console.log(originalIncreased)
+// let copy = [...original]//son copias reales y no cambia el original, con lo que impedimos que se modifique el original
+// console.log(copy)
+// copy[copy.length -1]=4;
+// console.log(copy)
+// console.log(original)
+// let hexValues = [..."0123456789ABCDEF"]
+// console.log(typeof hexValues);
+// console.log(hexValues);
+
+// let elements = new Array(-53, 3.258, true, "awesome arrays");
+
+// let single = Array.of(10);
+// console.log(single)
+
+// let copy2 = Array.from(original);
+// console.log(copy2);
+
+// //managing arrays
+
+// let colors = ["red","blue","green"];
+// // alert(colors[0])
+// colors[2] = "black";
+// colors[3] = "brown"; //añade un cuarto elemento
+// // alert(colors.length) // 4
+// colors[colors.length] = "black"; // añade un color en última posición sin equivocarte
+// colors[colors.length] = "white";// añade otro en el último lugar
+// console.log(colors)
+
+// //checking an array
+
+// let checking = ["foo", "bar", "baz", "qux"];
+// console.log(Array.from(checking.keys()));// ves las claves 0,1,2 y 3
+// console.log(Array.from(checking.values())) // y ves sus valores
+// console.log(Array.from(checking.entries())); //y ves las claves separadas por coma de sus valores. Creas un array dentro de un array
+
+// console.log([checking.length-1][3]);
+
+// let moreThings = ["hello", true, 3.1415, "world"];
+// let hello = moreThings[0] + " " + moreThings[3];
+// console.log(hello)
+
+// //last-in-first-out (LIFO) Pila arriba y abajo
+
+// let numbers4 = [1, 2, 3];
+// console.log(numbers4)
+// numbers4.push(5); // añade un elemento al final
+// console.log(numbers4);
+// numbers4.pop(); //borra el último
+// console.log(numbers4);
+// numbers4.push(4);
+// console.log(numbers4)
+
+// //first-in-first-out (FIFO)
+
+// let colors3 = ["red", "green", "blue"];
+// console.log(colors3);
+// colors3.shift();
+// console.log(colors3);
+// colors3.unshift("orange");
+// console.log(colors3)
+
+// //finding elements
+
+// let mixed = [1, true, 3, NaN, 1];
+// mixed.includes(2); //da false
+// console.log(mixed.includes(2))
+// mixed.includes(true); // da true
+// mixed.indexOf(3)// me dará la posición 2, empieza con 0
+// mixed.lastIndexOf(1)// me dice la última vez que salió 1, en este caso pos 4
+
+// const evens = [2, 4, 6];
+// console.log(evens.findIndex(x => x === 6)) //está en posición 2
+// console.log(evens.findIndex(x => x < 0)) //-1 (es respuesta automática en caso de no haber resultado en este caso) no hay ningún número negativo
+// console.log(evens.find(x => x % 3 === 0)) //nos muestra el elemnto que cumple, en este caso 6
+// console.log(evens.find(x => x % 7 === 0)) //no hay múltiplos de 7. undefined.
+
+//Ordering Arrays
+
+// let numbers2 = [1, 2, 3, 4, 5];
+// console.log(numbers2.reverse());
+
+// let moreNumbers = [0, 1, 5, 10, 15];
+// moreNumbers.sort();
+// console.log(moreNumbers); // lo trata como si fueran letras, funciona mejor con letras
+// // con esta ayudita .sort en forma de función, funciona bien con números.
+// function compare(value1, value2){
+//   if (value1 < value2){
+//     return -1;
+//   }else if (value1 > value2) {
+//     return 1;
+//   }else{
+//     return 0;
+//   }
+// }
+// moreNumbers.sort(compare);
+// console.log(moreNumbers)
+
+//another comparison function
+
+// let numbers = [4, 2, 5, 1, 3, 7, 7, 9, -1];
+// let counter = 0;
+// numbers.sort(function (a, b){
+//   counter++;
+//   console.log("a:", a);
+//   console.log("b:", b);
+//   console.log(a - b);
+//   return a - b,
+// });
+// console.log(numbers);
+// console.log(counter);
+
+// numbers.sort((a,b)=>b-a)
+// console.log(numbers);
+// console.log(counter);
+
+//Bubble sort
+
+let numbers5 = [3, 9, 8, 1, 4];
+for (let index = 0; index < numbers5.length -2; index++){
+    for(let j = 0, aux = 0; j < numbers5.length -1; j++){
+      if(numbers5[j] > numbers5[j+1]){
+        aux = numbers5[j];
+        numbers5[j] = numbers5[j+1];
+        numbers5[j+1] = aux;
+      }
+    }
+}
+console.log(numbers5)
