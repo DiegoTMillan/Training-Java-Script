@@ -303,100 +303,7 @@
 // };
 // console.log(star)
 
-//Escribe un objeto person,que contenga, nombre, apellidos, edad, dirección {tipo vía,nombre vía, num, cp, localidad}, teléfono
 
-// let person = {
-//   name: "Jonhy",
-//   lastName: "MeLavo",
-//   age: 120,
-//   address: {
-//     streetType: "Avenue",
-//     nameOfStreetType: "Destiny",
-//     number: 7,
-//     cp: 17654,
-//     location: "My Dreams City",
-//   },
-//   phone: "+34 678 543 210",
-// }
-
-// person.address.location = "Madrid"//para cambiar valor
-// person.phone = {
-//   0: "+34 678 543 210",
-//   2: "+34 678 543 210",
-//   3: "+34 678 543 210",
-// }
-// console.log(person)
-
-//para variar un número habría que cambiarlo en plan person.phone[2] = número tlf
-
-//Crear un objeto llamado login con propiedades y valores siguientes:
-//id => Un número hexadecimal
-//state => logged => true or false, => true or false,
-//userName => nombre
-//loginAt => fecha y hora
-
-// let login = {
-//   id: "F7CAB89",
-//   state: {
-//     logged: false,
-//     onLine: false,
-//   },
-//   userName: "name",
-//   date: "2022/03/28 18:15:30",
-// };
-// console.log(login)
-
-// Modificar el objeto person, para que incluya un email y una contraseña
-//Una vez hechos los cambios, pide por prompt ambos datos y modifica el objeto login
-//según estos datos sea o no correctos.
-//alert de bienvenidos refiriendo el nombre
-
-// person.email = "example@example.com";
-// person.password = "password";
-
-// let userEmail = prompt("please enter you email");
-// let userPassword = prompt("please enter your password");
-// if (userEmail == person.email && userPassword == person.password) {
-//   login.state.logged = true;
-//   login.state.onLine = true;
-//   let loginInfo = new Date();
-//   let year = loginInfo.getFullYear();
-//   let month = loginInfo.getMonth()+1;
-//   let day = loginInfo.getDate();
-//   let hour = loginInfo.getHours();
-//   let min = loginInfo.getMinutes();
-//   let sec = loginInfo.getSeconds();
-//   let completeDate = `${year}/`;
-//   if(month < 10){
-//     completeDate += `0${month}/`;
-//   }else{
-//     completeDate += `${month}/`
-//   }
-//   if (day < 10){
-//     completeDate += `0${day} `;
-//   }else {
-//     completeDate += `${day} `;
-//   }
-//   if (hour < 10){
-//     completeDate += `0${hour}:`
-//   }else {
-//     completeDate += `${hour}:`
-//   }
-//   if (hour < 10){
-//     completeDate += `0${min}:`
-//   }else {
-//     completeDate += `${min}:`
-//   }
-//   if (hour < 10){
-//     completeDate += `0${sec}`
-//   }else {
-//     completeDate += `${sec}`
-//   }
-//   alert(`Welcome ${person.name} ${person.lastName}, you logged in correctly`);
-//   console.log(`login at ${completeDate}`)
-// }else{
-//   alert("Your password or email are incorrect")
-// }
 // let x = 5;
 // let y = x;
 // y = 7;
@@ -412,47 +319,57 @@
 
 // observar que en el primer caso de valores primitivos si se guarda x y se refiere a él
 //en el segundo se sobrescribe por no ser valores primitivos y tratarse de un objeto
-let hero = {
-  character: "Iron Man",
-  name: "Tony Stark",
-  powers: [
-    "Genius-level intellect",
-    "Multiple powered armor suits",
-    "ability to fly",
-  ],
-  info: {
-    yearCreated: 1963,
-    powerOrigin: "from his suit",
-    Weapons: ["respulsor rays", "uni-beam projector", "lasers"],
-    didYouKnow:
-      "Tony Stark created and built one of Spider-man's upgraded suits knwon as the Iron Spider Suit. We got a small glimpe of it in Spider-Man: Homecoming!",
-  },
-};
+
+// let hero = {
+//   character: "Iron Man",
+//   name: "Tony Stark",
+//   powers: [
+//     "Genius-level intellect",
+//     "Multiple powered armor suits",
+//     "ability to fly",
+//   ],
+//   info: {
+//     yearCreated: 1963,
+//     powerOrigin: "from his suit",
+//     Weapons: ["respulsor rays", "uni-beam projector", "lasers"],
+//     didYouKnow:
+//       "Tony Stark created and built one of Spider-man's upgraded suits knwon as the Iron Spider Suit. We got a small glimpe of it in Spider-Man: Homecoming!",
+//   },
+// };
+
+//observar que powers se trata de un array pues tiene varios valores guardados para el mismo atributo.
 
 let shoppingCart = {
   shoes1: {
     product_id: 0,
     name: "Air Jordan",
-    price: "127 $",
+    price: "127$",
     quantity: 5,
   },
   shoes2: {
     product_id: 1,
     name: "Air Magic",
-    price: "134 $",
+    price: "134$",
     quantity: 3,
   },
   shoes3: {
     product_id: 2,
     name: "Air Bird",
-    price: "185 $",
+    price: "185$",
     quantity: 8,
   } ,
   shoes4: {
     product_id: 3,
     name: "Air Kobe",
-    price: "457 $",
+    price: "457$",
     quantity: 1,
   },
 }
+let shoes4 = new Object(shoppingCart.shoes1);
+console.log(shoes4)
+
 console.log(Object.keys(shoppingCart.shoes2))
+console.log("       id: " + shoppingCart.shoes1.product_id + " name: " + shoppingCart.shoes1.name + " " + shoppingCart.shoes1.price + " " + shoppingCart.shoes1.quantity + " quantity");
+console.log("       id: " + shoppingCart.shoes2.product_id + " name: " + shoppingCart.shoes2.name + " " + shoppingCart.shoes2.price + " " + shoppingCart.shoes2.quantity + " quantity")
+console.log("       id: " + shoppingCart.shoes3.product_id + " name: " + shoppingCart.shoes3.name + " " + shoppingCart.shoes3.price + " " + shoppingCart.shoes3.quantity + " quantity")
+console.log("       id: " + shoppingCart.shoes4.product_id + " name: " + shoppingCart.shoes4.name + " " + shoppingCart.shoes4.price + " " + shoppingCart.shoes4.quantity + " quantity")

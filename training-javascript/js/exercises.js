@@ -358,7 +358,7 @@
 //     console.log(`${firstLetter+1}. ${string.charAt(firstLetter)}`);
 // }
 
-//Exercise 2
+//EXERCISE 2.1
 
 // let string = "no lemon no melon"
 // let init = string.length
@@ -367,7 +367,7 @@
 //     console.log(`${string2.charAt(init)}`);
 // }
 
-//Teacher solution Ex2
+//EXERCISE 2.2 TEACHER
 
 // let palindrome = "no lemon, no melon";
 // let invertPal = "";
@@ -376,7 +376,7 @@
 // }
 // console.log(invertPal);
 
-//Exercise 3
+//EXERCISE 2.2
 
 // let repeat = 4 ;
 // for (var i=0; i < repeat; i++){
@@ -384,7 +384,7 @@
 // }
 //Busqué la opción en la consola de desagrupar los elementos repetidos
 
-//Jorge answer
+//JORGE ANSWER 2.2
 
 // let msg = "";
 // let side = 10;
@@ -396,51 +396,51 @@
 // }
 // console.log(msg);
 
-//Drawing with asteriks
+//DRAWING WITH ASTERIKS
 
-let base = 8
-let base2 = 8
-for (let i = 0; i < base2; i++) {
-    let picture = " ";
-    for (let j =0; j < base2 - i; j++){
-      picture += " ";
-    }
-    for (let k = 0; k <= i; k++){
-      picture += "* ";
-    }
-    console.log(picture);
-}
-for (let i = 3; i < base; i++) {
-    let picture = " ";
-    for (let j =0; j < base - i; j++){
-      picture += " ";
-    }
-    for (let k = 0; k <= i; k++){
-      picture += "* ";
-    }
-    console.log(picture);
-}
-for (let i = 3; i < base; i++) {
-    let picture = " ";
-    for (let j =0; j < base - i; j++){
-      picture += " ";
-    }
-    for (let k = 0; k <= i; k++){
-      picture += "* ";
-    }
-    console.log(picture);
-}
-let msg = "";
-let side = 3;
-for (let i = 0; i < side; i++) {
-//   for (let j = 0; j < side; j++) {
-    msg = msg + "        ***";
-  msg = msg + "\n";
-}
-console.log(msg);
+// let base = 8
+// let base2 = 8
+// for (let i = 0; i < base2; i++) {
+//     let picture = " ";
+//     for (let j =0; j < base2 - i; j++){
+//       picture += " ";
+//     }
+//     for (let k = 0; k <= i; k++){
+//       picture += "* ";
+//     }
+//     console.log(picture);
+// }
+// for (let i = 3; i < base; i++) {
+//     let picture = " ";
+//     for (let j =0; j < base - i; j++){
+//       picture += " ";
+//     }
+//     for (let k = 0; k <= i; k++){
+//       picture += "* ";
+//     }
+//     console.log(picture);
+// }
+// for (let i = 3; i < base; i++) {
+//     let picture = " ";
+//     for (let j =0; j < base - i; j++){
+//       picture += " ";
+//     }
+//     for (let k = 0; k <= i; k++){
+//       picture += "* ";
+//     }
+//     console.log(picture);
+// }
+// let msg = "";
+// let side = 3;
+// for (let i = 0; i < side; i++) {
+// //   for (let j = 0; j < side; j++) {
+//     msg = msg + "        ***";
+//   msg = msg + "\n";
+// }
+// console.log(msg);
 
 
-//Teacher solution
+//TEACHER SOLUTION EXERCISE 2.3
 
 // let asteriks = "";
 // for(let i = 0; i < 4; i++){
@@ -448,7 +448,8 @@ console.log(msg);
 // }
 // console.log(asteriks);
 
-//Exercise 4
+//EXERCISE 2.4
+
 // t17M = 20.5;
 // t18M = 18.1;
 // t19M = 18.9;
@@ -479,7 +480,7 @@ console.log(msg);
 //   }
 // }console.log(`${((t17M + t18M + t19M + t20M + t21M + t22M + t23M) / 7).toFixed(2)} grados es la media de temperatura de la última semana`);
 
-//Teacher solution Ex 4
+//TEACHER SOLUTION EX 2.4
 
 // let mediaTemp = 0;
 // let counter = 0;
@@ -499,7 +500,7 @@ console.log(msg);
 // }
 // console.log("7-days Average Temperature  ", mediaTemp/counter);
 
-//Exercise 5
+//EXERCISE 2.5
 
 // // Setting max and min possible values
 // let max = 10;
@@ -521,7 +522,7 @@ console.log(msg);
 //     }
 // }
 
-//Exercise 6
+//EXERCISE 2.6 POR MÍ
 
 // let password = "";
 // let numPass = parseInt(
@@ -821,38 +822,39 @@ console.log(msg);
 //       alert("error del copón")
 //       break;
 //   }
-  //   if (
-  //     (optMinus =
-  //       "yes" && optMayus == "yes" && optNum == "yes" && optSim == "not")
-  //   ) {
-  //     for (j = 0; j < numPass; j++) {
-  //       password += String.fromCharCode(
-  //         Math.floor(Math.random() * (57 - 48 + 1) + 48) ||
-  //           Math.floor(Math.random() * (90 - 65 + 1) + 65) ||
-  //           Math.floor(Math.random() * (122 - 97 + 1) + 97)
-  //       );
-  //       alert(`Your password is: ${password}`);
-  //     break;
-  //     }
-  //   }
+// }
+//     if (
+//       (optMinus =
+//         "yes" && optMayus == "yes" && optNum == "yes" && optSim == "not")
+//     ) {
+//       for (j = 0; j < numPass; j++) {
+//         password += String.fromCharCode(
+//           Math.floor(Math.random() * (57 - 48 + 1) + 48) ||
+//             Math.floor(Math.random() * (90 - 65 + 1) + 65) ||
+//             Math.floor(Math.random() * (122 - 97 + 1) + 97)
+//         );
+//         alert(`Your password is: ${password}`);
+//       break;
+//       }
+//     }
 
-  //   if (
-  //     optMinus == "yes" &&
-  //     optMayus == "yes" &&
-  //     optNum == "yes" &&
-  //     optSim == "yes"
-  //   ) {
-  //     for (j = 0; j < numPass; j++) {
-  //       password += String.fromCharCode(
-  //         Math.floor(Math.random() * (122 - 33 + 1) + 33)
-  //       );
-  //       alert(`Your password is: ${password}`);
-  //     break;
-  //     }
-  //   }
-//}
+//     if (
+//       optMinus == "yes" &&
+//       optMayus == "yes" &&
+//       optNum == "yes" &&
+//       optSim == "yes"
+//     ) {
+//       for (j = 0; j < numPass; j++) {
+//         password += String.fromCharCode(
+//           Math.floor(Math.random() * (122 - 33 + 1) + 33)
+//         );
+//         alert(`Your password is: ${password}`);
+//       break;
+//       }
+//     }
+// }
 
-// Exercise 6
+// EXERCISE 2.6
 
 // let length = parseInt(prompt("Please enter the password length (8 - 16)"));
 // length = length >= 8 && length <= 16 ? length : 8;
@@ -945,3 +947,105 @@ console.log(msg);
 //   }
 // }
 // alert(`Your password: ${password} in ${countingGenPass} attemps.`);
+
+//EJERCICIOS CON OBJETOS Y ARRAYS MODULO 3
+
+//EXERCISE 3.1.
+
+//Escribe un objeto person,que contenga, nombre, apellidos, 
+//edad, dirección {tipo vía,nombre vía, num, cp, localidad}, teléfono
+
+//para variar un número habría que cambiarlo en plan person.phone[2] = número tlf
+
+//Crear un objeto llamado login con propiedades y valores siguientes:
+//id => Un número hexadecimal
+//state => logged => true or false, => true or false,
+//userName => nombre
+//loginAt => fecha y hora
+
+// Modificar el objeto person, para que incluya un email y una contraseña
+//Una vez hechos los cambios, pide por prompt ambos datos y modifica el objeto login
+//según estos datos sea o no correctos.
+//alert de bienvenidos refiriendo el nombre
+
+// let person = {
+//   name: "John",
+//   lastName: "Doe",
+//   age: 27,
+//   address: {
+//     streetType: "Boulevard",
+//     nameOfStreetType: "Of Broken Dreams",
+//     number: 6,
+//     postalCode: 29600,
+//     location: "Málaga",
+//   },
+//   phone: "+34 777777777"
+// }
+
+// person.address.location = "Madrid";
+// person.phone = {
+//   0: "+34 888888888",
+//   1: "+34 555555555",
+//   2: "+34 444444444",
+// }
+// console.log(person);
+
+// person.phone[2] = "+75 22222222";
+
+// let login = {
+//   id: "fec6790da98",
+//   state: {
+//     logged: false,
+//     onLine: false,
+//   },
+//   userName: "name",
+//   loginAt: "2022/03/29 10:47:30",
+// };
+// console.log(login);
+
+// person.email = "example@example.com";
+// person.password = "password";
+
+// let userMail = prompt("Please, enter your email");
+// let userPassword = prompt("Please, enter your password");
+// if (userMail == person.email && userPassword == person.password){
+//   login.state.logged = true;
+//   login.state.onLine = true;
+//   let loginHour = new Date();
+//   let year = loginHour.getFullYear();
+//   let month = loginHour.getMonth()+1;
+//   let day = loginHour.getDate();
+//   let hour = loginHour.getHours();
+//   let min= loginHour.getMinutes();
+//   let sec = loginHour.getSeconds();
+//   let completeDate = `${year}/`;
+//   if (month < 10){
+//     completeDate += `0${month}/`;
+//   }else{
+//     completeDate += `${month}/`;
+//   }
+//   if (day < 10){
+//     completeDate += `0${day} `;
+//   }else{
+//     completeDate += `${day} `;
+//   }
+//   if (hour < 10){
+//     completeDate += `0${hour}:`;
+//   }else {
+//     completeDate += `${hour}:`;
+//   }
+//   if (min < 10){
+//     completeDate += `0${min}:`;
+//   }else {
+//     completeDate += `${min}:`;
+//   }
+//   if (sec < 10) {
+//     completeDate += `0${sec}`;
+//   }else{
+//     completeDate += `${sec}`;
+//   }
+//   alert(`Welcome ${person.name} ${person.lastName} you logged correctly`);
+//   console.log(`logged at ${completeDate}`);
+// }else{
+//   alert("Your email or password is not correct")
+// }
