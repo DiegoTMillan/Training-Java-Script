@@ -397,50 +397,50 @@
 // console.log(msg);
 
 //DRAWING WITH ASTERIKS
-let ceil = 3;
-let base = 8; // ramas del árbol
-let base2 = 8;// copa del árbol
-let trunk = 1;// tronco del árbol
-for (let i = 0; i < base2; i++) {
-  let picture = "   ";//espacios blanco para situar asterisco en el centro
-  for (let j = 0; j < base2 - i; j++) {
-    picture += " ";
-  }
-  for (let k = 0; k <= i; k++) {
-    picture += "* ";//colocar asteriscos centrados
-  }
-  console.log(picture);
-}
-for (let i = ceil; i < base; i++) {
-  let picture = "   ";
-  for (let j = 0; j < base - i; j++) {
-    picture += " ";
-  }
-  for (let k = 0; k <= i; k++) {
-    picture += "* ";
-  }
-  console.log(picture);
-}
-for (let i = ceil; i < base; i++) {
-  let picture = "   ";
-  for (let j = 0; j < base - i; j++) {
-    picture += " ";
-  }
-  for (let k = 0; k <= i; k++) {
-    picture += "* ";
-  }
-  console.log(picture);
-}
-for (let i = trunk; i < base; i++) {
-  let picture = "   ";
-  for (let j = 0; j < base - trunk; j++) {
-    picture += " ";
-  }
-  for (let k = 0; k <= trunk; k++) {
-    picture += "* ";
-  }
-  console.log(picture);
-}
+// let ceil = 3;
+// let base = 8; // ramas del árbol
+// let base2 = 8;// copa del árbol
+// let trunk = 1;// tronco del árbol
+// for (let i = 0; i < base2; i++) {
+//   let picture = "   ";//espacios blanco para situar asterisco en el centro
+//   for (let j = 0; j < base2 - i; j++) {
+//     picture += " ";
+//   }
+//   for (let k = 0; k <= i; k++) {
+//     picture += "* ";//colocar asteriscos centrados
+//   }
+//   console.log(picture);
+// }
+// for (let i = ceil; i < base; i++) {
+//   let picture = "   ";
+//   for (let j = 0; j < base - i; j++) {
+//     picture += " ";
+//   }
+//   for (let k = 0; k <= i; k++) {
+//     picture += "* ";
+//   }
+//   console.log(picture);
+// }
+// for (let i = ceil; i < base; i++) {
+//   let picture = "   ";
+//   for (let j = 0; j < base - i; j++) {
+//     picture += " ";
+//   }
+//   for (let k = 0; k <= i; k++) {
+//     picture += "* ";
+//   }
+//   console.log(picture);
+// }
+// for (let i = trunk; i < base; i++) {
+//   let picture = "   ";
+//   for (let j = 0; j < base - trunk; j++) {
+//     picture += " ";
+//   }
+//   for (let k = 0; k <= trunk; k++) {
+//     picture += "* ";
+//   }
+//   console.log(picture);
+// }
 // let msg = "";
 // let side = 3;
 // for (let i = 0; i < side; i++) {
@@ -1060,105 +1060,21 @@ for (let i = trunk; i < base; i++) {
 //   alert("Your email or password is not correct")
 // }
 
-// let empty = [];
-// let colors = ["red", "blue", "green"];
-// let combinedElements = [1.1, true, "Hello"];
+//----------
+//EXERCISES MOD 3
+//----------
 
-// let original = [1, 2, 3];
-// console.log(original);
-// let originIncreased = [0, ...original, 4];
-// console.log(originIncreased);
-// let copy = [...original];
-// console.log(copy);
-// copy[copy.length-1] = 4;
-// console.log(copy);
-// console.log(original)
+//Exercise 3.1.
 
-// let elements = new Array(-53, 3.258, true, "awesome arrays");
-
-// let single = Array.of(10);
-// console.log(single);
-
-// let copy2 = Array.from(elements);
-// console.log(copy2)
-
-// let colors = ["red", "blue", "green"];
-// console.log(colors);
-// colors[2] = "black";
-// console.log(colors);
-// colors[3] = "brown";
-// console.log(colors);
-// console.log(colors.length);
-// colors[colors.length-1] = "yellow";
-// console.log(colors);
-// colors[colors.length] = "brown";
-// console.log(colors);
-
-// let checking = ["foo", "bar", "baz", "qux"];
-// console.log(Array.from(checking.keys()));
-// console.log(Array.from(checking.values()));
-// console.log(Array.from(checking.entries()));
-
-// console.log([checking.length-1[0]]);
-
-// let things = ["hello", true, 3.1416, "world"];
-// let hello = things[0] + " " + things[3]
-// console.log(hello)
-
-// let numbers = [1, 2, 3];
-// console.log(numbers);
-// numbers.push(5);
-// console.log(numbers);
-// numbers.pop()
-// console.log(numbers);
-// numbers.push(4);
-// console.log(numbers);
-
-// let colors = ["red", "green", "blue"];
-// console.log(colors);
-// colors.shift();
-// console.log(colors);
-// colors.unshift("yellow");
-// console.log(colors);
-
-// let mixed = [1, true, 3, NaN, 1];
-// console.log(mixed);
-// console.log(mixed.includes(2));
-// console.log(mixed.includes(true));
-// console.log(mixed.indexOf(3));
-// console.log(mixed.lastIndexOf(1));
-
-// const evens = [2, 4, 6];
-// console.log(evens.findIndex(x => x === 6));
-// console.log(evens.findIndex(x => x < 0));
-// console.log(evens.find(x =>x % 3 === 0));
-// console.log(evens.find(x => x % 7 === 0));
-
-// let numbers = [0, 1, 5, 10, 15];
-// console.log(numbers.reverse());
-// numbers.sort();
-// console.log(numbers);
-
-// function compare(value1, value2) {
-//   if (value1 < value2) {
-//     return -1;
-//   } else if (value1 > value2) {
-//     return 1;
-//   } else {
-//     return 0;
-//   }
-// }
-// numbers.sort(compare);
-// console.log(numbers);
-
-//
-// let numbers = [3, 9, 8, 1, 4];
-// for (let index = 0; index < numbers.length - 2; index++) {
-//   for (let j = 0, aux = 0; j < numbers.length - 1; j++) {
-//     if (numbers[j] > numbers[j + 1]) {
-//       aux = numbers[j];
-//       numbers[j] = numbers[j + 1];
-//       numbers[j + 1] = aux;
-//     }
-//   }
-// }
+//User properties
+let userMaxLimit = parseInt(prompt("Please, enter max limit"));
+let userMinLimit = parseInt(prompt("Please, enter min limit"))
+//Preparing array
+result = new Array (20)
+//Let's create random numbers
+for (i=0 ; i < 20; i++) {
+    let randomNumber = Math.floor(Math.random() * (userMaxLimit - userMinLimit + 1)) + userMinLimit;
+    console.log(randomNumber)
+    result[i] = randomNumber
+}
+ console.log(result)

@@ -549,14 +549,121 @@
 
 //Bubble sort
 
-let numbers5 = [3, 9, 8, 1, 4];
-for (let index = 0; index < numbers5.length -2; index++){
-    for(let j = 0, aux = 0; j < numbers5.length -1; j++){
-      if(numbers5[j] > numbers5[j+1]){
-        aux = numbers5[j];
-        numbers5[j] = numbers5[j+1];
-        numbers5[j+1] = aux;
-      }
-    }
-}
-console.log(numbers5)
+// let numbers5 = [3, 9, 8, 1, 4];
+// for (let index = 0; index < numbers5.length -2; index++){
+//     for(let j = 0, aux = 0; j < numbers5.length -1; j++){
+//       if(numbers5[j] > numbers5[j+1]){
+//         aux = numbers5[j];
+//         numbers5[j] = numbers5[j+1];
+//         numbers5[j+1] = aux;
+//       }
+//     }
+// }
+// console.log(numbers5)
+
+//OTHERS LOOPS
+
+// let numbers = [1, 4, 6, 8];
+// let sum = 0;
+// for (let num of numbers){
+//   sum += num;
+// }
+// console.log(sum);
+
+// let hero = {
+//   character: "Iron Man",
+//   name: "Tony Stark",
+// };
+// for (let key in hero){
+//   console.log(hero[key]);
+// }
+
+//RECORRER ARRAYS Y OBJETOS
+
+// ["Aragorn", "Gandalf", "Nazgul"].forEach((item, index, array) => {
+//   console.log(`${item} is at index ${index} in ${array}`);
+// });
+
+// [..."Soberno de Angmar en tiempos pasados"].forEach((letter)=>{
+//   console.log(letter);
+// });
+
+//recuerda forEach(
+//   la flecha y el código
+// )
+
+// let numbers = [1, 2, 3];
+// let result = numbers.map((item, index, array) => item *10);
+// console.log(result)
+
+// let numbers2 = [15, 10, 5, 0, -5, -10];
+// let result2 = numbers2.filter(x => x < 5);
+// console.log(result2);
+
+// let numbers = [1, 2, 3, 4, 5];
+// console.log(numbers.every((item, index, array) => item > 2)); // false, no todos los números son menores de 2
+// console.log(numbers.some((item, index, array) => item > 2)); // true, alguno de los valores es menor de 2
+
+// let numbers2 = [1, 2, 3, 4, 5];
+// let result = numbers.reduce((accum, item, index, array) => accum + item, 0);
+// console.log(result)
+// let result2 = numbers.reduceRight((accum, item, index, array) => accum + item, 0);
+// console.log(result2);
+//------------------------
+//COMO HACER UN CALENDARIO
+//--------------------------
+// let calendar = new Array(5);// 5 rows of the calendar
+// for (let i = 0; i < calendar.length; i++) {
+//   calendar[i] = new Array(7);// each row has 7 columns
+// }
+
+// //initialize the array
+//   for (let row = 0, day = 1; row < calendar.length; row++) {
+//     for (let col=0; col< calendar[row].length;col++) {
+//     if (day < 31) {
+//       calendar[row][col] = day++;
+//     } else {
+//       calendar[row][col] = day;
+//       day = 1;
+//     }
+//   }
+// }
+// console.log(calendar);
+//-------------
+//FUNCTIONS
+//-------------
+
+//typical function example
+// function sum(num1, num2){
+//   console.log(num1+num2);
+// }
+
+// //expresion de función
+// const sum = function (num1, num2) {//se pordría usar let, pero vamos a utilizar const
+//   return num1 + num2;
+// }//no se pueden utilizar antes de su declaración
+
+// //calling a function before the declaration
+
+// sayHello("my friend", "today will be a great day");
+
+// function sayHello(name, message) {
+//   console.log("hello " + name + ", " + message);
+// }
+
+//arrow functions
+
+// const sum = (num1, num2) => {
+//   return num1 + num2;
+// };
+// console.log(sum(3, 4))
+
+// const cube = x => (x*x)*6;
+// console.log(cube(4));
+
+//return, devolución de un valor. Además el código termina ahí, no aparacerá lo que hay debajo del bloque.
+// function sum(num1, num2) {
+//   return num1 + num2;
+//   console.log("Hello World");
+// }
+// console.log(sum(2, 2));
