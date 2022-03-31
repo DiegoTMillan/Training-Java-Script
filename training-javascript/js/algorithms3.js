@@ -4,69 +4,102 @@
 
 //Exercise 3.1.
 
-// //User properties
+const exercise1 = () => {
+  //User properties
 
-// let userMaxLimit = parseInt(prompt("Please, enter max limit"));
-// let userMinLimit = parseInt(prompt("Please, enter min limit"));
-// //Getting a Random Number with this Function
+  let userMaxLimit = parseInt(prompt("Please, enter max limit"));
+  let userMinLimit = parseInt(prompt("Please, enter min limit"));
 
-// const randomNumber = function (min, max) {
-//     return Math.floor((Math.random() * (max - min + 1)) + min);
-// }
-// //Preparing array
+  //Getting a Random Number with this Function
 
-// result = new Array (20)
+  const randomNumber = function (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
 
-// //Let's create random elements for array
+  //Preparing array
+  let numberOfElements = 20;
+  let resultingArray = new Array(numberOfElements);
+  // console.log(resultingArray)
 
-// for (i=0 ; i < 20; i++) {
-//     randomArrayElements = randomNumber(userMinLimit, userMaxLimit);
-//     console.log(randomArrayElements)
-//     result[i] = randomArrayElements
-// }
-//  console.log(result)
+  //Let's create random elements for array
 
-//Exercise 3.2
+  for (i = 0; i < numberOfElements; i++) {
+    randomArrayElements = randomNumber(userMinLimit, userMaxLimit);
+    //   console.log(randomArrayElements);
+    resultingArray[i] = randomArrayElements;
+  }
+  // console.log(resultingArray);
 
-// //Getting Hour and minutes from system
+  //ordering the array
 
-// let systemHour = new Date();
-// let hour = systemHour.getHours();
-// let minute = systemHour.getMinutes();
-// let adjustedHour = `${hour}:`
+  function compare(value1, value2) {
+    if (value1 < value2) {
+      return -1;
+    } else if (value1 > value2) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+  resultingArray.sort(compare);
+  console.log(resultingArray);
 
-// //Transforme Hours and Minutes in a decimal number
+  //showing min and max from array
 
-// let HoursToMinutes = (hour*60) + minute
-// // let HoursToMinutes = 0
-// console.log(HoursToMinutes)
+  console.log("min is: ", resultingArray[0]);
+  console.log("max is: ", resultingArray[resultingArray.length - 1]);
+};
 
-// //Preparing Function for decimal number from hours and minutes reference
+// exercise1();
 
-// const referenceHour = function(h, min){
-//     return (h*60)+min
-// }
-// let firstHour = referenceHour(6,0);
-// let secondHour = referenceHour(11, 59);
-// let thirdHour = referenceHour(12, 0);
-// let fourthHour = referenceHour(20, 59);
-// let fifthHour = referenceHour(21, 0);
-// let lastHour = referenceHour(5, 59);
+const exercise2 = () => {
+  //Exercise 3.2
 
-// //Let's show the message
+  //Getting Hour and minutes from system
 
-// if (HoursToMinutes >= firstHour && HoursToMinutes <= secondHour){
-//     alert("¡Buenos días!")
-// }else if (HoursToMinutes >= thirdHour && HoursToMinutes <= fourthHour){
-//     alert("¡Buenas tardes!");
-// }else if (HoursToMinutes >= fifthHour){
-// // }else{
-//     alert("¡Buenas noches!")
-// }else if (HoursToMinutes <= lastHour ){
-//     alert("¡Buenas noches!")
-// }else{
-//     ("There is a space-time anomaly")
-// }
+  let systemHour = new Date();
+  let hour = systemHour.getHours();
+  let minute = systemHour.getMinutes();
+  let adjustedHour = `${hour}:`;
+
+  //Transform Hours and Minutes in a decimal number
+
+  let HoursToMinutes = hour * 60 + minute;
+  //let HoursToMinutes = 0
+  //console.log(HoursToMinutes);
+
+  //Preparing Function for decimal number from hours and minutes reference
+
+  const referenceHour = function (h, min) {
+    return h * 60 + min;
+  };
+  let firstHour = referenceHour(6, 0);
+  let secondHour = referenceHour(11, 59);
+  let thirdHour = referenceHour(12, 0);
+  let fourthHour = referenceHour(20, 59);
+  let fifthHour = referenceHour(21, 0);
+  let lastHour = referenceHour(5, 59);
+
+  //Let's show the message
+
+  if (HoursToMinutes >= firstHour && HoursToMinutes <= secondHour) {
+    alert("¡Buenos días!");
+  } else if (HoursToMinutes >= thirdHour && HoursToMinutes <= fourthHour) {
+    alert("¡Buenas tardes!");
+  } else if (HoursToMinutes >= fifthHour) {
+    alert("¡Buenas noches!");
+  } else if (HoursToMinutes <= lastHour) {
+    alert("¡Buenas noches!");
+  } else {
+    ("There is a space-time anomaly");
+  }
+};
+
+// exercise2();
+
+//Exercise 3.3
+
+const exercise3 = () => {
 
 let hexColor1 = "";
 let hexColor2 = "";
@@ -111,7 +144,7 @@ for (let i = 0; i < hCLength; i++) {
         hexColor8 += String.fromCharCode(randomNumber(97, 102));
         hexColor9 += String.fromCharCode(randomNumber(97, 102));
         hexColor10 += String.fromCharCode(randomNumber(97, 102));
-        break;  
+        break;
     }
   }
 // }
@@ -159,5 +192,6 @@ switch(randomNumber(1, 10)){
         console.log("%cHello World", "color:" + "#" + hexColor10);
         break
 }
-// break;
-// }
+}
+
+exercise3()
