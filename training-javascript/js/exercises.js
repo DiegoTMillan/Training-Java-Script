@@ -960,7 +960,7 @@
 
 //EJERCICIOS CON OBJETOS Y ARRAYS MODULO 3
 
-//EXERCISE 3.1.
+//EXERCISE 2.1.1.
 
 //Escribe un objeto person,que contenga, nombre, apellidos,
 //edad, dirección {tipo vía,nombre vía, num, cp, localidad}, teléfono
