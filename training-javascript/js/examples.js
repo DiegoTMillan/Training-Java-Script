@@ -563,12 +563,12 @@
 
 //OTHERS LOOPS
 
-let numbers = [1, 4, 6, 8];
-let sum = 0;
-for (let num of numbers){
-  sum += num;
-}
-console.log(sum);
+// let numbers = [1, 4, 6, 8];
+// let sum = 0;
+// for (let num of numbers){
+//   sum += num;
+// }
+// console.log(sum);
 
 // let hero = {
 //   character: "Iron Man",
@@ -667,3 +667,6 @@ console.log(sum);
 //   console.log("Hello World");
 // }
 // console.log(sum(2, 2));
+
+//---------------------JavaScript DOM-------------------------
+
