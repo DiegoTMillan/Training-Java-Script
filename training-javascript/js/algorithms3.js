@@ -64,17 +64,15 @@ const exercise1 = () => {
 //------------
 
 const exercise2 = () => {
-
   //Getting Hour and minutes from system
 
   let systemHour = new Date();
   let hour = systemHour.getHours();
   let minute = systemHour.getMinutes();
-  let adjustedHour = `${hour}:`;
 
-  //Transform Hours and Minutes in a decimal number
+  //Transform Hours and Minutes of system in a decimal number using the function
 
-  let HoursToMinutes = hour * 60 + minute;
+  let HoursToMinutes = referenceHour(hour, minute);
   //let HoursToMinutes = 0
   //console.log(HoursToMinutes);
 
@@ -209,25 +207,58 @@ const exercise3 = () => {
 //Exercise 4
 //----------
 
-// let userDni = prompt("Please write a DNI with this format 00000000-A")
-let userDni = "40694707-W"
+const exercise4 = () => {
+  //Obtaining the DNI
 
-let carRegistrationCodeArray = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
-// console.log(carRegistrationCodeArray)
+  let userDni = prompt("Please write a DNI with this format 00000000-A");
 
-let dniObject = userDni.split("-");
-let dniNumbersArray = Object.values(dniObject[0]);
-let lastLetter = Object.values(dniObject[1])
-console.log(lastLetter)
-let dniNumbers = parseInt(dniNumbersArray);
-console.log(dniNumbers)
+  //This is the car registration code
 
-// let sumOfNumbers = parseInt(dniNumbersArray);
-// let sum = 0;
-// for (let num of sumOfNumbers){
-//   sum += num;
-// }
-// console.log(sum);
+  let carRegistrationCodeArray = [
+    "T",
+    "R",
+    "W",
+    "A",
+    "G",
+    "M",
+    "Y",
+    "F",
+    "P",
+    "D",
+    "X",
+    "B",
+    "N",
+    "J",
+    "Z",
+    "S",
+    "Q",
+    "V",
+    "H",
+    "L",
+    "C",
+    "K",
+    "E",
+  ];
 
+  //Separating numbers from the last letter, and converting number"strings" into pure numbers
 
+  let dniObject = userDni.split("-");
+  let numberOfDni = parseInt(dniObject[0]);
+  let lastLetter = Object.values(dniObject[1]);
 
+  //creating the numberCode for the letter
+
+  let codeLetter = numberOfDni % 23;
+
+  //Let' Check the DNI
+
+  if (carRegistrationCodeArray[codeLetter] == lastLetter) {
+    alert("DNI valid");
+  } else if (carRegistrationCodeArray[codeLetter] != lastLetter) {
+    alert("Data entered is wrong");
+  } else {
+    alert("I don't know what i'm doing");
+  }
+};
+
+// exercise4()
