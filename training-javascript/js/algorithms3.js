@@ -8,7 +8,7 @@ const randomNumber = function (min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-const referenceHour = function (h, min) {
+const hoursToMinutes = function (h, min) {
   return h * 60 + min;
 };
 
@@ -72,28 +72,27 @@ const exercise2 = () => {
 
   //Transform Hours and Minutes of system in a decimal number using the function
 
-  let HoursToMinutes = referenceHour(hour, minute);
-  //let HoursToMinutes = 0
-  //console.log(HoursToMinutes);
+  let referenceHour = hoursToMinutes(hour, minute);
+  //let referenceHour = 360
 
   //Using function to convert hours to mins
 
-  let firstHour = referenceHour(6, 0);
-  let secondHour = referenceHour(11, 59);
-  let thirdHour = referenceHour(12, 0);
-  let fourthHour = referenceHour(20, 59);
-  let fifthHour = referenceHour(21, 0);
-  let lastHour = referenceHour(5, 59);
+  let firstHour = hoursToMinutes(6, 0);
+  let secondHour = hoursToMinutes(11, 59);
+  let thirdHour = hoursToMinutes(12, 0);
+  let fourthHour = hoursToMinutes(20, 59);
+  let fifthHour = hoursToMinutes(21, 0);
+  let lastHour = hoursToMinutes(5, 59);
 
   //Let's show the message
 
-  if (HoursToMinutes >= firstHour && HoursToMinutes <= secondHour) {
+  if (referenceHour >= firstHour && referenceHour <= secondHour) {
     alert("¡Buenos días!");
-  } else if (HoursToMinutes >= thirdHour && HoursToMinutes <= fourthHour) {
+  } else if (referenceHour >= thirdHour && referenceHour <= fourthHour) {
     alert("¡Buenas tardes!");
-  } else if (HoursToMinutes >= fifthHour) {
+  } else if (referenceHour >= fifthHour) {
     alert("¡Buenas noches!");
-  } else if (HoursToMinutes <= lastHour) {
+  } else if (referenceHour <= lastHour) {
     alert("¡Buenas noches!");
   } else {
     ("There is a space-time anomaly");
@@ -203,6 +202,10 @@ const exercise3 = () => {
 
 // exercise3()
 
+//exercise3 best solution
+
+
+
 //----------
 //Exercise 4
 //----------
@@ -212,9 +215,15 @@ const exercise4 = () => {
 
   let userDni = prompt("Please write a DNI with this format 00000000-A");
 
-  //This is the car registration code
+  //checking userDni is in correct format
 
-  let carRegistrationCodeArray = [
+  while (userDni.charAt(userDni.length - 2) != "-") {
+    userDni = prompt("Please write a DNI with this format 00000000-A");
+  }
+
+  //This is the dni code
+
+  let dniCodeArray = [
     "T",
     "R",
     "W",
@@ -252,13 +261,24 @@ const exercise4 = () => {
 
   //Let' Check the DNI
 
-  if (carRegistrationCodeArray[codeLetter] == lastLetter) {
+  if (dniCodeArray[codeLetter] == lastLetter) {
     alert("DNI valid");
-  } else if (carRegistrationCodeArray[codeLetter] != lastLetter) {
+  } else if (dniCodeArray[codeLetter] != lastLetter) {
     alert("Data entered is wrong");
   } else {
     alert("I don't know what i'm doing");
   }
 };
 
-// exercise4()
+// exercise4();
+
+//----------
+//Exercise 5
+//----------
+
+const exercise5 = () => {
+
+  let carRegistration = ""
+}
+
+

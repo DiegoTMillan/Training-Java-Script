@@ -604,9 +604,9 @@
 // console.log(numbers.every((item, index, array) => item > 2)); // false, no todos los números son menores de 2
 // console.log(numbers.some((item, index, array) => item > 2)); // true, alguno de los valores es menor de 2
 
-let numbers2 = [1, 2, 3, 4, 5];
-let result = numbers2.reduce((accum, item, index, array) => accum + item, 0);
-console.log(result)
+// let numbers2 = [1, 2, 3, 4, 5];
+// let result = numbers2.reduce((accum, item, index, array) => accum + item, 0);
+// console.log(result)
 // let result2 = numbers.reduceRight((accum, item, index, array) => accum + item, 0);
 // console.log(result2);
 //------------------------
