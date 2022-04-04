@@ -233,12 +233,16 @@ const exercise3a = () => {
 const exercise4 = () => {
   //Obtaining the DNI
 
-  let userDni = prompt("Please write a DNI with this format 00000000-A");
+  let userDni = prompt(
+    "Please write a DNI with this format 00000000-A"
+  ).toUpperCase();
 
   //checking userDni is in correct format
 
   while (userDni.charAt(userDni.length - 2) != "-") {
-    userDni = prompt("Please write a DNI with this format 00000000-A");
+    userDni = prompt(
+      "Please write a DNI with this format 00000000-A"
+    ).toUpperCase();
   }
 
   //This is the dni code
@@ -279,14 +283,29 @@ const exercise4 = () => {
 
   let codeLetter = numberOfDni % 23;
 
-  //Let' Check the DNI
+  //Let's Check the DNI
 
   if (dniCodeArray[codeLetter] == lastLetter) {
-    alert("DNI valid");
+    alert("valid DNI");
   } else if (dniCodeArray[codeLetter] != lastLetter) {
     alert("Data entered is wrong");
   } else {
     alert("I don't know what i'm doing");
+  }
+
+  //And now... BONUS
+  //creating a dni Generator with a function
+
+  const dniGenerator = () => {
+    let randomNumberDni = randomNumber(10000000, 100000000);
+    randomNumberDni += dniCodeArray[randomNumberDni % 23];
+    return randomNumberDni;
+  };
+
+  //showing the DNIs
+
+  for (let i = 0; i < 10; i++) {
+    console.log(dniGenerator());
   }
 };
 
@@ -300,7 +319,7 @@ const exercise5 = () => {
   //User says how many plates he wants it
 
   let userNumberOfCarLicensePlate = parseInt(
-    prompt("How many car registrations do you need?")
+    prompt("How many car license plates do you need?")
   );
 
   //The random Car Plate Generator
@@ -312,7 +331,7 @@ const exercise5 = () => {
       carLicensePlate += String.fromCharCode(randomNumber(48, 57));
     }
     for (k = 0; k < 3; k++) {
-      carLicensePlate += letters[Math.floor(Math.random() * 19)];
+      carLicensePlate += letters[randomNumber(0, letters.length-1 )];
     }
     return carLicensePlate;
   };
@@ -405,3 +424,22 @@ const exercise7 = () => {
   console.log(evenArray);
 };
 // exercise7();
+
+//----------
+//Exercise 9
+//----------
+
+const exercise9 = () => {
+  let stringCode = "";
+  for (i = 97; i <= 122; i++) {
+    stringCode += String.fromCharCode(i);
+  }
+  let arrayCode = Array.from(stringCode);
+  console.log(arrayCode);
+};
+
+function decipher(boolean, message) {
+  let sentence = "alea jacta est";
+  for (;;) {}
+}
+// exercise9()

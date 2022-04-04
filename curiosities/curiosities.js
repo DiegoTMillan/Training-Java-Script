@@ -24,13 +24,13 @@ const randomNumber = function (min, max) {
     "Si subes al Everest, encontrarás fósiles marinos. Esto se debe a que la cordillera del Himalaya fue un lecho submarino hasta que la placa India chocó con la asiática y lo elevó hace millones de años.",
     "Carl Sagan partició en la creación de un disco de oro que viaja en las misiones Voyager. Se llama -Sounds of Earth- y contiene datos de nuestras culturas y nuestra ubicación en base a los púlsares más cercanos. Es literalemente la primera botella con un mensaje lanzada a la vastedad del infinito océano del universo.",
   ];
-  p.innerHTML = curiosities[randomNumber(0, 19)];
+  p.innerText = curiosities[randomNumber(0, 19)];
   let timerId = setInterval(
-    () => (p.innerHTML = curiosities[randomNumber(0, 19)]),
+    () => (p.innerText = curiosities[randomNumber(0, 19)]),
     15000
   );
   setTimeout(() => {
     clearInterval(timerId);
-    p.innerHTML =
+    p.innerText =
       "Y aquí terminan las curiosidades, espero que las hayas disfrutado";
   }, 120000);
