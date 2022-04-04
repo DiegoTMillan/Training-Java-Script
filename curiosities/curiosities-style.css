@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  :root {
+    font-size: 0.785rem;
+    font-family: "Lato", sans-serif;
+    --blue: #0d6efd;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #d63384;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #198754;
+    --teal: #20c997;
+    --cyan: #0dcaf0;
+    --dark: #292a2b;
+  }
+  section {
+    /* width: 70%; */
+    height: fit-content;
+    background-image: url(universo.jpg);
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin:auto
+  }
+  div {
+    background-color: white;
+    width: 70%;
+    border-radius: 5px;
+    opacity: 0.4;
+  }
+  h1{
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 2.5rem;
+  }
+  p{
+    text-align: center;
+    margin-bottom: 1.5em;
+    font-size: 1.7rem;
+    transition: all 2s ease-in-out;
+  }

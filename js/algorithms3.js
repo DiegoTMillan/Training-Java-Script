@@ -358,8 +358,9 @@ const exercise6 = () => {
 
   //Starting with a console.log, after that every 15 seconds the console.log will show a new quote
 
-  if (curiosities[randomNumber(0, 19)] != curiosities[randomNumber(0, 19)]) {
     console.log(curiosities[randomNumber(0, 19)]);
+
+    //SI TENGO TIEMPO, BUSCAR UNA SOLUCIÓN PARA QUE NO SE REPITAN LAS CITAS!!***
     let timerId = setInterval(
       () => console.log(curiosities[randomNumber(0, 19)]),
       15000
@@ -372,7 +373,7 @@ const exercise6 = () => {
         "Y aquí terminan las curiosidades, espero que las hayas disfrutado"
       );
     }, 120000);
-  }
+  // }
 };
 
 exercise6();
