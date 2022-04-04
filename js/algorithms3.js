@@ -202,9 +202,9 @@ const exercise3 = () => {
 
 // exercise3()
 
-//exercise3.1 best solution
+//exercise3.a best solution
 
-const exercise3a1 = () => {
+const exercise3a = () => {
   //storing all letter and digit combinations
   //for html color code
   const generateColor = () => {
@@ -224,7 +224,7 @@ const exercise3a1 = () => {
   }
 };
 
-// exercise3a1();
+// exercise3a();
 
 //----------
 //Exercise 4
@@ -358,22 +358,50 @@ const exercise6 = () => {
 
   //Starting with a console.log, after that every 15 seconds the console.log will show a new quote
 
-    console.log(curiosities[randomNumber(0, 19)]);
+  console.log(curiosities[randomNumber(0, 19)]);
 
-    //SI TENGO TIEMPO, BUSCAR UNA SOLUCIÓN PARA QUE NO SE REPITAN LAS CITAS!!***
-    let timerId = setInterval(
-      () => console.log(curiosities[randomNumber(0, 19)]),
-      15000
+  //ACONSEJA ANTONIO UN DO...WHILE PARA EVITAR QUE SE REPITA JUSTO LA SIGUIENTE. NO SEAS VAGO Y PONTE CON ELLO CUANDO TERMINES***
+  let timer = setInterval(
+    () => console.log(curiosities[randomNumber(0, 19)]),
+    15000
+  );
+  //after two minutes console.log gives you a text saying goodbye
+
+  setTimeout(() => {
+    clearInterval(timer);
+    console.log(
+      "Y aquí terminan las curiosidades, espero que las hayas disfrutado"
     );
-    //after two minutes console.log gives you a text saying goodbye
-
-    setTimeout(() => {
-      clearInterval(timerId);
-      console.log(
-        "Y aquí terminan las curiosidades, espero que las hayas disfrutado"
-      );
-    }, 120000);
+  }, 120000);
   // }
 };
 
-exercise6();
+// exercise6();
+
+//----------
+//Exercise 7
+//----------
+
+const exercise7 = () => {
+  //Preparing the arrays
+  let numberOfElementsInArrays = 100;
+  let evenAndOddArray = new Array(numberOfElementsInArrays);
+  let evenArray = new Array();
+
+  //First loop for creating an array with 100 randomNumbers between 0 and 500
+  for (i = 0; i < numberOfElementsInArrays; i++) {
+    let randomNumbersOfArray = randomNumber(0, 500);
+    evenAndOddArray[i] = randomNumbersOfArray;
+  }
+  // console.log(evenAndOddArray)
+
+  //Using a filter, we are separating odd from odd numbers
+
+  evenArray = evenAndOddArray.filter((x) => x % 2 == 0);
+  // console.log(evenArray)
+
+  //With this function we order the array
+  evenArray.sort((a, b) => b - a);
+  console.log(evenArray);
+};
+// exercise7();
