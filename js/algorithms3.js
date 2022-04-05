@@ -331,7 +331,7 @@ const exercise5 = () => {
       carLicensePlate += String.fromCharCode(randomNumber(48, 57));
     }
     for (k = 0; k < 3; k++) {
-      carLicensePlate += letters[randomNumber(0, letters.length-1 )];
+      carLicensePlate += letters[randomNumber(0, letters.length - 1)];
     }
     return carLicensePlate;
   };
@@ -377,12 +377,15 @@ const exercise6 = () => {
 
   //Starting with a console.log, after that every 15 seconds the console.log will show a new quote
 
-  console.log(curiosities[randomNumber(0, 19)]);
+  console.log(curiosities[randomNumber(0, curiosities.length-1)]);
 
   //ACONSEJA ANTONIO UN DO...WHILE PARA EVITAR QUE SE REPITA JUSTO LA SIGUIENTE. NO SEAS VAGO Y PONTE CON ELLO CUANDO TERMINES***
+  
+  let start = new Date();
+  let end = null;
   let timer = setInterval(
-    () => console.log(curiosities[randomNumber(0, 19)]),
-    15000
+    () => console.log(curiosities[randomNumber(0, curiosities.length-1)]),
+    10000
   );
   //after two minutes console.log gives you a text saying goodbye
 
@@ -391,6 +394,8 @@ const exercise6 = () => {
     console.log(
       "Y aquí terminan las curiosidades, espero que las hayas disfrutado"
     );
+    end = new Date();
+    console.log(`Operation took ${end.getTime() - start.getTime()} miliseconds`)
   }, 120000);
   // }
 };
@@ -409,8 +414,7 @@ const exercise7 = () => {
 
   //First loop for creating an array with 100 randomNumbers between 0 and 500
   for (i = 0; i < numberOfElementsInArrays; i++) {
-    let randomNumbersOfArray = randomNumber(0, 500);
-    evenAndOddArray[i] = randomNumbersOfArray;
+    evenAndOddArray[i] = randomNumber(0, 500);
   }
   // console.log(evenAndOddArray)
 
@@ -430,16 +434,32 @@ const exercise7 = () => {
 //----------
 
 const exercise9 = () => {
-  let stringCode = "";
+  let stringCode = " ";
   for (i = 97; i <= 122; i++) {
     stringCode += String.fromCharCode(i);
   }
   let arrayCode = Array.from(stringCode);
   console.log(arrayCode);
+
+  let sentence = "alea jacta est";
+  let sentenceArray = [..."alea jacta est"];
+  console.log(sentenceArray);
+  let cipherSentence = new Array();
+  for (let i = 0; i < sentenceArray.length; i++) {
+    if (sentenceArray.includes("x")) {
+      sentenceArray[-1];
+    } else if (sentenceArray.includes("y")) {
+      sentence[0];
+    } else if (sentenceArray.includes("z")) {
+      sentence[1];
+    // } else if (sentenceArray[0]) {
+    //   sentenceArray[-3];
+    }
+     sentenceArray[i] += stringCode.indexOf(sentenceArray[i+3]);
+  }
+ 
+  console.log(sentenceArray);
 };
 
-function decipher(boolean, message) {
-  let sentence = "alea jacta est";
-  for (;;) {}
-}
-// exercise9()
+// };
+exercise9();
