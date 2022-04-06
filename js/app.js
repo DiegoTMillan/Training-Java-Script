@@ -56,18 +56,29 @@
 // console.log(document.querySelector("h1").textContent);
 // document.querySelector("h1").textContent = "Stronger together"
 
-let header = document.createElement("h1");
-header.append("Hello World!");
-header.prepend("¡");
-document.body.prepend(header);
-document.body.append(header);
-document.querySelector("h1").firstChild.before("I'm happy ")
-let paragraph = document.createElement("p");
-paragraph.textContent = "Writting a paragraph";
-// document.body.append(paragraph)
-document.querySelector("h1").after(paragraph);
-document.querySelector("h1").replaceWith(paragraph)//sustituido h1 por párrafo
-paragraph.remove();
+// let header = document.createElement("h1");
+// header.append("Hello World!");
+// header.prepend("¡");
+// document.body.prepend(header);
+// document.body.append(header);
+// document.querySelector("h1").firstChild.before("I'm happy ")
+// let paragraph = document.createElement("p");
+// paragraph.textContent = "Writting a paragraph";
+// // document.body.append(paragraph)
+// document.querySelector("h1").after(paragraph);
+// document.querySelector("h1").replaceWith(paragraph)//sustituido h1 por párrafo
+// paragraph.remove();
+
+let paragraph = document.querySelector("p");
+//esto es como hacer CSS pero directamente desde js
+paragraph.style.textAlign = "center";
+paragraph.style.textTransform = "capitalize"
+paragraph.style.backgroundColor = "black";
+paragraph.style.color = "white";
+paragraph.style.padding = "1em";
+paragraph.setAttribute("class","margin");
+console.log(paragraph.getAttribute("class"));//devuelve la clase margin
+console.log(paragraph.style.cssText)//muestra todo el CSS de p en texto en la consola.
 
 
 

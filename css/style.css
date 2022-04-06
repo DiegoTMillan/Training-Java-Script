@@ -53,3 +53,7 @@ div {
     opacity: 0;
     transition: all 3s ease-in-out;
 }
+.margin{
+  width: 80%;
+  margin: 2em auto;
+}
