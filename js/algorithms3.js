@@ -418,7 +418,7 @@ const exercise7 = () => {
   }
   // console.log(evenAndOddArray)
 
-  //Using a filter, we are separating odd from odd numbers
+  //Using a filter, we are separating even  from odd numbers
 
   evenArray = evenAndOddArray.filter((x) => x % 2 == 0);
   // console.log(evenArray)
@@ -434,32 +434,6 @@ const exercise7 = () => {
 //----------
 
 const exercise9 = () => {
-  let stringCode = " ";
-  for (i = 97; i <= 122; i++) {
-    stringCode += String.fromCharCode(i);
-  }
-  let arrayCode = Array.from(stringCode);
-  console.log(arrayCode);
 
-  let sentence = "alea jacta est";
-  let sentenceArray = [..."alea jacta est"];
-  console.log(sentenceArray);
-  let cipherSentence = new Array();
-  for (let i = 0; i < sentenceArray.length; i++) {
-    if (sentenceArray.includes("x")) {
-      sentenceArray[-1];
-    } else if (sentenceArray.includes("y")) {
-      sentence[0];
-    } else if (sentenceArray.includes("z")) {
-      sentence[1];
-    // } else if (sentenceArray[0]) {
-    //   sentenceArray[-3];
-    }
-     sentenceArray[i] += stringCode.indexOf(sentenceArray[i+3]);
-  }
- 
-  console.log(sentenceArray);
-};
-
-// };
+}                                                      
 exercise9();
