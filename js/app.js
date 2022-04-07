@@ -49,6 +49,7 @@
 // console.log(document.querySelector("section").outerHTML)
 // document.querySelector("section").outerHTML = "<h1>Waw</h1>"
 
+
 // document.body.insertAdjacentHTML('afterbegin','<nav class="nav">Navigation </nav>');
 // document.querySelector("nav").insertAdjacentHTML("beforebegin", '<h1>Main Header</h1>')
 // document.querySelector("nav").insertAdjacentHTML("beforeend", '<a href="https://google.com">Go google</a>')
@@ -69,16 +70,18 @@
 // document.querySelector("h1").replaceWith(paragraph)//sustituido h1 por párrafo
 // paragraph.remove();
 
-let paragraph = document.querySelector("p");
-//esto es como hacer CSS pero directamente desde js
-paragraph.style.textAlign = "center";
-paragraph.style.textTransform = "capitalize"
-paragraph.style.backgroundColor = "black";
-paragraph.style.color = "white";
-paragraph.style.padding = "1em";
-paragraph.setAttribute("class","margin");
-console.log(paragraph.getAttribute("class"));//devuelve la clase margin
-console.log(paragraph.style.cssText)//muestra todo el CSS de p en texto en la consola.
+// let paragraph = document.querySelector("p");
+// //esto es como hacer CSS pero directamente desde js
+// paragraph.style.textAlign = "center";
+// paragraph.style.textTransform = "capitalize"
+// paragraph.style.backgroundColor = "black";
+// paragraph.style.color = "white";
+// paragraph.style.padding = "1em";
+// paragraph.setAttribute("class","margin");
+// console.log(paragraph.getAttribute("class"));//devuelve la clase margin
+// console.log(paragraph.style.cssText)//muestra todo el CSS de p en texto en la consola.
+
+
 
 
 
