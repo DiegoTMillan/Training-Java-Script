@@ -1,3 +1,6 @@
+//Imports
+import { numberGenerator } from "./util";
+
 //----------
 //EXERCISES MOD 3
 //----------
@@ -31,7 +34,7 @@ const exercise1 = () => {
   //Let's create random elements for array
 
   for (i = 0; i < numberOfElements; i++) {
-    randomArrayElements = randomNumber(userMinLimit, userMaxLimit);
+    randomArrayElements = numberGenerator(userMinLimit, userMaxLimit);
     //   console.log(randomArrayElements);
     resultingArray[i] = randomArrayElements;
   }
@@ -57,7 +60,7 @@ const exercise1 = () => {
   console.log("max is: ", resultingArray[resultingArray.length - 1]);
 };
 
-// exercise1();
+exercise1();
 
 //------------
 //Exercise 3.2
