@@ -374,33 +374,38 @@ const exercise6 = () => {
     "Si subes al Everest, encontrarás fósiles marinos. Esto se debe a que la cordillera del Himalaya fue un lecho submarino hasta que la placa India chocó con la asiática y lo elevó hace millones de años.",
     "Carl Sagan partició en la creación de un disco de oro que viaja en las misiones Voyager. Se llama -Sounds of Earth- y contiene datos de nuestras culturas y nuestra ubicación en base a los púlsares más cercanos. Es literalemente la primera botella con un mensaje lanzada a la vastedad del infinito océano del universo.",
   ];
+  let curiosities2 = [...curiosities];
+
+  //ACONSEJA ANTONIO UN DO...WHILE PARA EVITAR QUE SE REPITA JUSTO LA SIGUIENTE. NO SEAS VAGO Y PONTE CON ELLO CUANDO TERMINES*** 
+  //NO DOY CON LA TECLA. PREGUNTAR.
 
   //Starting with a console.log, after that every 15 seconds the console.log will show a new quote
 
-  console.log(curiosities[randomNumber(0, curiosities.length-1)]);
+  //Trying to use a Do While. But the loop does'nt stop. I think because timer never stops.
 
-  //ACONSEJA ANTONIO UN DO...WHILE PARA EVITAR QUE SE REPITA JUSTO LA SIGUIENTE. NO SEAS VAGO Y PONTE CON ELLO CUANDO TERMINES***
+// do{
+  console.log(curiosities[randomNumber(0, curiosities.length - 1)]);
+
   
-  let start = new Date();
-  let end = null;
+
+// }while (curiosities.indexOf(0) == curiosities2.indexOf(0));
+  
   let timer = setInterval(
-    () => console.log(curiosities[randomNumber(0, curiosities.length-1)]),
+    () => console.log(curiosities2[randomNumber(0, curiosities2.length - 1)]),
     10000
   );
   //after two minutes console.log gives you a text saying goodbye
-
+// };
   setTimeout(() => {
     clearInterval(timer);
     console.log(
       "Y aquí terminan las curiosidades, espero que las hayas disfrutado"
     );
-    end = new Date();
-    console.log(`Operation took ${end.getTime() - start.getTime()} miliseconds`)
   }, 120000);
   // }
-};
+}
 
-// exercise6();
+exercise6();
 
 //----------
 //Exercise 7
@@ -430,10 +435,182 @@ const exercise7 = () => {
 // exercise7();
 
 //----------
-//Exercise 9
+//Exercise 8
 //----------
 
-const exercise9 = () => {
+const exercise8 = () => {
+  let cardValue = [
+    "ACE",
+    "KING",
+    "QUEEN",
+    "JACK",
+    "10",
+    "9",
+    "8",
+    "7",
+    "6",
+    "5",
+    "4",
+    "3",
+    "2",
+  ];
+  let suits = ["clubs", "hearts", "spades", "diamonds"];
+  let clubs = [...cardValue];
+  let hearts = [...cardValue];
+  let spades = [...cardValue];
+  let diamonds = Array.from(cardValue);
+  console.log(hearts);
+  let balance = 500;
+  let bet = 0;
+  let minimumBet = 10;
+  let continuePlaying = false;
 
-}                                                      
-exercise9();
+  do {
+    do {
+      bet = parseInt(prompt("How much do you want to bet"));
+      if (bet > balance) {
+        alert("Sorry, your bet is higher than your avaiable balance");
+        alert(`Maximum avaiable: ${balance}`);
+      }
+      if (bet < minimumBet) {
+        alert("Sorry, your bet is lower than minimum required.");
+        alert(`Minimum required: ${minimumBet}`);
+      }
+    } while (bet > balance || bet < minimumBet);
+    // let card1 = randomNumber(0, clubs.length);
+    // let card2 = randomNumber(0, clubs.length);
+    // let suit1 = suits[randomNumber(0, suits.length)];
+    let card1 = Math.floor(Math.random() * clubs.length);
+    let card2 = Math.floor(Math.random() * clubs.length);
+    let suit1 = suits[Math.floor(Math.random() * suits.length)];
+    let suit2;
+    do {
+      // suit2 = suits[randomNumber(0, suits.length)];
+      suit2 = suits[Math.floor(Math.random() * suits.length)];
+    } while (card1 == card2 && suit1 == suit2);
+    console.log(
+      `${eval(suit1)[card1]} ${suit1} vs. ${eval(suit2)[card2]} ${suit2}`
+    );
+    if (card1 < card2) {
+      balance += bet;
+      alert("you win!");
+    } else if (card1 > card2) {
+      balance -= bet;
+      alert("you lose");
+    } else {
+      ("Draw");
+    }
+    if (balance >= minimumBet) {
+      continuePlaying =
+        prompt("Would you like to continue playing").toLowerCase() == "y";
+    }
+  } while (continuePlaying && balance >= minimumBet);
+  alert(`Betting benefits: ${balance - 500} €`);
+  alert(`Total balance: ${balance} €`);
+};
+
+// exercise8();
+
+const exercise9 = (encode, text) => {
+  const cipher = (encode, text) => {
+    if (encode) {
+      text = [...text].map((letter) => {
+        switch (letter.charCodeAt(0)) {
+          case 88:
+            return String.fromCharCode(65);
+          case 89:
+            return String.fromCharCode(66);
+          case 90:
+            return String.fromCharCode(67);
+          case 120:
+            return String.fromCharCode(97);
+          case 121:
+            return String.fromCharCode(98);
+          case 122:
+            return String.fromCharCode(99);
+          case 32:
+            return String.fromCharCode(32);
+          default:
+            return String.fromCharCode(letter.charCodeAt(0) + 3);
+        }
+      });
+    } else {
+      text = [...text].map((letter) => {
+        switch (letter.charCodeAt(0)) {
+          case 65:
+            return String.fromCharCode(88);
+          case 66:
+            return String.fromCharCode(89);
+          case 67:
+            return String.fromCharCode(90);
+          case 97:
+            return String.fromCharCode(120);
+          case 98:
+            return String.fromCharCode(121);
+          case 99:
+            return String.fromCharCode(122);
+          case 32:
+            return String.fromCharCode(32);
+          default:
+            return String.fromCharCode(letter.charCodeAt(0) - 3);
+        }
+      });
+    }
+    console.log(text.join(""));
+  };
+  cipher(true, "vini vidi vinci");
+  cipher(false, "ylql ylgl ylqfl");
+};
+// exercise9();
+
+//Solucion de Fran
+//Math cipher
+//messageToCoding.charCodeAt(X)=88; 
+//88+3=91; 
+//91-65=26; 
+//26%26=0;
+//0+65=65;
+
+//Math decipher
+//messageToCoding.charCodeAt(C)=67; 
+//67-3=64; 
+//64-90=26; 
+//-26%26=0;
+//0+90=90;
+
+const exercise9A = (typeCoding, message, shift) => {
+  let result = "";
+
+  const coding = (typeCoding, message, shift, asciiMin, asciiMax) => {
+    let result = "";
+    typeCoding === true
+      ? (result += String.fromCharCode(
+          ((message + shift - asciiMin) % 26) + asciiMin
+        ))
+      : (result += String.fromCharCode(
+          ((message - shift - asciiMax) % 26) + asciiMax
+        ));
+    return result;
+  };
+
+  for (let i = 0; i < message.length; i++) {
+    if (message.charCodeAt(i) >= 65 && message.charCodeAt(i) <= 90) {
+      result += coding(typeCoding, message.charCodeAt(i), shift, 65, 90);
+    } else if (message.charCodeAt(i) >= 97 && message.charCodeAt(i) <= 122) {
+      result += coding(typeCoding, message.charCodeAt(i), shift, 97, 122);
+    } else {
+      result += String.fromCharCode(message.charCodeAt(i));
+    }
+  }
+  console.log(result);
+};
+// exercise9A(true, "Atacar al amanecer!" , 3);
+
+//BONUS Timer processing.
+
+// let start = new Date();
+  // let end = null;
+  // end = new Date();
+    // console.log(
+    //   `Operation took ${end.getTime() - start.getTime()} miliseconds`
+    // );
