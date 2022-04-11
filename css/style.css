@@ -34,10 +34,10 @@ h1 {
 }
 
 .main {
-  background-color: white;
   width: 80%;
-  margin: 10% auto;
   padding: 2em;
+  margin: 10% auto;
+  background-color: white;
 }
 
 .main .container {
@@ -128,8 +128,9 @@ h1 {
   border: 5px solid transparent;
   border-radius: 0.3rem;
   background-color: white;
-  -webkit-box-shadow: 0 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-          box-shadow: 0 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+          box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  z-index: 2;
 }
 
 .main .alert {
@@ -139,6 +140,7 @@ h1 {
   margin: 1em auto;
   padding: 1em;
   border-radius: 0.3rem;
+  color: white;
   background-color: #d63384;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -149,15 +151,15 @@ h1 {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-transition: all 0, 3s linear;
-  transition: all 0, 3s linear;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
-.main .alert .fa-rectangle-xmark {
-  font-size: 1.9rem;
+.main .alert .fa-square-xmark {
+  font-size: 1.5rem;
 }
 
-.main .alert .fa-rectangle-xmark:hover {
+.main .alert .fa-square-xmark:hover {
   color: #292a2b;
 }
 
@@ -170,26 +172,26 @@ table {
 }
 
 table tr {
-  background-color: #dcd8d8;
+  background: #f6f6f6;
 }
 
 table tr:nth-of-type(odd) {
-  background-color: #e9e9e9;
+  background: #e9e9e9;
 }
 
 table th {
-  background-color: #2980b9;
+  background: #2980b9;
   padding: 0.5em;
   font-weight: 700;
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   text-transform: capitalize;
 }
 
-table th th:first-child {
+table th:first-child {
   border-top-left-radius: 0.3rem;
 }
 
-table th th:last-child {
+table th:last-child {
   border-top-right-radius: 0.3rem;
 }
 
@@ -198,9 +200,9 @@ table td {
   padding: 0.8em;
 }
 
-table td:first-child() {
+table td:first-child {
   width: 70%;
-  font-size: 1.9rem;
+  font-size: 1.5rem;
 }
 
 table td:nth-child(2),
@@ -217,9 +219,10 @@ table .fa-2x {
 }
 
 table .fa-2x:hover {
+  font-size: 1.3em;
+  color: #ffca2c;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  color: #ffca2c;
 }
 
 table td:nth-child(3) .fa-2x {
@@ -228,13 +231,15 @@ table td:nth-child(3) .fa-2x {
 
 table td:nth-child(3) .fa-2x:hover {
   color: #bb2d3b;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 table .fa-circle-check {
   color: #198754;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   margin-right: 15px;
-  -webkit-transition: all 0.3 ease-in-out;
-  transition: all 0.3 ease-in-out;
 }
 
 table .fa-circle-check:hover {
@@ -247,8 +252,8 @@ table .fa-circle-check:hover {
   opacity: 0 !important;
   height: 0 !important;
   padding: 0 !important;
-  -webkit-transition: all 0.3 linear;
-  transition: all 0.3 linear;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .editable {
