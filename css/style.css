@@ -20,11 +20,11 @@ body {
   width: 100%;
   height: 100vh;
   font-family: "Lato", sans-serif;
-  background: #2193b0;
+  background: #2b6495;
   /* fallback for old browsers */
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(#6dd5ed), to(#2193b0));
-  background: linear-gradient(to right, #6dd5ed, #2193b0);
+  background: -webkit-gradient(linear, right top, left top, from(#fffde4), to(#2b5376));
+  background: linear-gradient(to left, #fffde4, #2b5376);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -34,6 +34,7 @@ h1 {
 }
 
 .main {
+  background-color: white;
   width: 80%;
   margin: 10% auto;
   padding: 2em;
@@ -94,7 +95,7 @@ h1 {
           transform: translateX(10px);
 }
 
-.main label input {
+.main input {
   display: block;
   width: 80%;
   background-color: #bee5e3;
@@ -107,31 +108,31 @@ h1 {
   transition: all 0.15s ease-in-out;
 }
 
-.main label input::-webkit-input-placeholder {
+.main input::-webkit-input-placeholder {
   color: #292a2b;
 }
 
-.main label input:-ms-input-placeholder {
+.main input:-ms-input-placeholder {
   color: #292a2b;
 }
 
-.main label input::-ms-input-placeholder {
+.main input::-ms-input-placeholder {
   color: #292a2b;
 }
 
-.main label input::placeholder {
+.main input::placeholder {
   color: #292a2b;
 }
 
-.main label input:focus {
+.main input:focus {
   border: 5px solid transparent;
   border-radius: 0.3rem;
   background-color: white;
-  -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-          box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  -webkit-box-shadow: 0 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+          box-shadow: 0 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
-.main.alert {
+.main .alert {
   width: 100%;
   height: auto;
   opacity: 1;
@@ -148,17 +149,15 @@ h1 {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
   -webkit-transition: all 0, 3s linear;
   transition: all 0, 3s linear;
 }
 
-.main.alert .fa-rectangle-xmark {
-  font-size: 1.5rem;
+.main .alert .fa-rectangle-xmark {
+  font-size: 1.9rem;
 }
 
-.main.alert .fa-rectangle-xmark:hover {
+.main .alert .fa-rectangle-xmark:hover {
   color: #292a2b;
 }
 
@@ -186,11 +185,11 @@ table th {
   text-transform: capitalize;
 }
 
-table th th:nth-child() {
+table th th:first-child {
   border-top-left-radius: 0.3rem;
 }
 
-table th th:nth-last-child() {
+table th th:last-child {
   border-top-right-radius: 0.3rem;
 }
 
@@ -229,5 +228,34 @@ table td:nth-child(3) .fa-2x {
 
 table td:nth-child(3) .fa-2x:hover {
   color: #bb2d3b;
+}
+
+table .fa-circle-check {
+  color: #198754;
+  margin-right: 15px;
+  -webkit-transition: all 0.3 ease-in-out;
+  transition: all 0.3 ease-in-out;
+}
+
+table .fa-circle-check:hover {
+  color: #20c997;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.dismissible {
+  opacity: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  -webkit-transition: all 0.3 linear;
+  transition: all 0.3 linear;
+}
+
+.editable {
+  background-color: white;
+  display: inline-block;
+  padding: .3em;
+  border-radius: .3rem;
+  margin-top: .3em;
 }
 /*# sourceMappingURL=style.css.map */
