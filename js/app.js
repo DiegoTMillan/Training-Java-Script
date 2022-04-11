@@ -81,7 +81,9 @@
 // console.log(paragraph.getAttribute("class"));//devuelve la clase margin
 // console.log(paragraph.style.cssText)//muestra todo el CSS de p en texto en la consola.
 
-
+document.body.addEventListener("click", () => alert("this is the body"))
+document.body.firstElementChild.addEventListener("click", () => alert("this is the section"))
+document.body.firstElementChild.firstElementChild.addEventListener("click", () => alert("this is the div"))
 
 
 

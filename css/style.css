@@ -19,7 +19,7 @@
   --cyan: #0dcaf0;
   --dark: #292a2b;
 }
-section {
+/* section {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -56,4 +56,20 @@ div {
 .margin{
   width: 80%;
   margin: 2em auto;
+} */
+body{
+  background-color: black;
+  padding: 2em;
+}
+section{
+  background-color: green;
+  min-height: 20vh;
+  width: 60%;
+  padding: 2em;
+}
+div {
+  background-color: blue;
+  min-height: 10vh;
+  width: 40%;
+  padding: 2em;
 }
