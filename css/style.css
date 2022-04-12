@@ -31,6 +31,8 @@ body {
 h1 {
   font-family: "Smooch Sans", sans-serif;
   font-size: 3.9rem;
+  justify-content: left;
+  width: 50%;
 }
 
 .main {
@@ -38,6 +40,34 @@ h1 {
   padding: 2em;
   margin: 10% auto;
   background-color: white;
+}
+header{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.right{
+  width: 50%;
+}
+.content-select{
+  appearance: none;
+  float:right;
+}
+.content-select select{
+  text-align-last: center;
+  appearance: none;
+  width: 100%;
+  padding: 10px 20px;
+  height: 3em;
+  background: #2980b9;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  transition: all 0.25s ease;
+}
+.content-select select:hover{
+  background-color: #0b5ed7;
+  transform: scale(1.1);
 }
 
 .main .container {
@@ -209,6 +239,7 @@ table td:nth-child(2),
 table td:nth-child(3) {
   width: 15%;
   font-size: 1.1rem;
+  text-align: center;
 }
 
 table .fa-2x {

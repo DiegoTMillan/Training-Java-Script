@@ -9,6 +9,19 @@ window.addEventListener("load", () => {
     close.addEventListener("click", () => {
       alert.classList.add("dismissible");
     });
+    console.log(document.querySelector("tbody").firstElementChild)
+    
+//-------
+//DOING EXERCISE
+//-------
+
+    let showUnDone = document.querySelector("select").children[1];
+    console.log(showUnDone)
+    showUnDone.addEventListener("click", () => {
+        if (document.querySelector("tbody").firstElementChild.getAttribute("data-complete") === true){
+            document.querySelector("tbody").firstElementChild.classList.add("dismissible")
+        }
+    });
   
     //function for get value input on focus
     let input = document.querySelector("input");
