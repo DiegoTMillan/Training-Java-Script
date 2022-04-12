@@ -69,7 +69,6 @@
 // console.log(document.querySelector("section").outerHTML)
 // document.querySelector("section").outerHTML = "<h1>Waw</h1>"
 
-
 // document.body.insertAdjacentHTML('afterbegin','<nav class="nav">Navigation </nav>');
 // document.querySelector("nav").insertAdjacentHTML("beforebegin", '<h1>Main Header</h1>')
 // document.querySelector("nav").insertAdjacentHTML("beforeend", '<a href="https://google.com">Go google</a>')
@@ -141,29 +140,51 @@
 //     time2= e.timeStamp;
 //     console.log(time2);
 // });
-// console.log(time1-time2);
+// console.log(time2-time1);
 
 //-------
 //EVENT CANCELLATION
 //-------
 
-// console.log(document.forms[0]);
-// document.forms[0].onsubmit = (e) => e.preventDefault();
+// console.log(document.forms[1]);
+// document.forms[0].onsubmit = (e) => e.preventDefault();//onsubmit es como poner addEventListener del tiron con el on delante
 
 //-------
 //DRAG AND DROP
 //-------
 
+let div1 = document.querySelector("#Uno");
+let div2 = document.querySelector("#Dos");
+
+div1.addEventListener("dragstart", () => {
+  console.log("div1 dispara dragstart");
+});
+div1.addEventListener("drag", () => {
+  console.log("div1 dispara drag");
+});
+div1.addEventListener("dragend", () => {
+  console.log("div1 dispara dragend");
+});
+
+div2.addEventListener("dragenter", (e) => {
+  console.log("div2 dispara dragenter");
+  e.preventDefault()
+});
+div2.addEventListener("dragover", (e) => {
+  console.log("div2 dispara dragover");
+  e.preventDefault()
+});
+div2.addEventListener("dragdrop", () => {
+  console.log("div2 dispara dragdrop");
+});
+div2.addEventListener("dragleave", () => {
+  console.log("div2 dispara dragleave");
+});
+
 // let droptarget = document.querySelector("#droptarget");
 // droptarget.addEventListener("dragover", (e) => {
-//     e.preventDefault();
+//   e.preventDefault();
 // });
 // droptarget.addEventListener("dragenter", (e) => {
-//     e.preventDefault()
-// })
-
-
-
-
-
-
+//   e.preventDefault();
+// });

@@ -88,18 +88,48 @@ div {
 /*EVENT CANCELLATION
 /*-------*/
 
-form {
+/* form {
   width: 60%;
   margin: 1em auto;
+  padding: 1em;
   background-color: var(--blue);
 }
+div {
+  width: 100%;
+  background-color: white;
+  padding: 1em;
+  text-align: center;
+}
+input {
+  border: 1px solid black;
+  width: 100%;
+  border-radius: 0.3rem;
+  padding: 0.5em;
+}
+button {
+  background-color: var(--green);
+  padding: 0.5em;
+  border-radius: 0.3rem;
+  color: white;
+} */
 
+/*-------
+/*DRAG AND DROP
+/*-------*/
 
-
-
-
-
-
-
-
-
+body {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  padding: 3em;
+}
+#Uno {
+  background-color: blue;
+}
+#Dos {
+  background-color: green;
+}
+div {
+  width: 30%;
+  height: 20vh;
+}
