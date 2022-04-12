@@ -1,3 +1,7 @@
+//-------
+//QUERYSELECTOR
+//-------
+
 //selección individual
 // let nav = document.querySelector("nav")//con un punto delante para clase, y con almohadilla para id
 // console.log(nav);
@@ -10,6 +14,10 @@
 // let headersAndParagraphs = document.querySelectorAll(`h1,p`);
 // // console.log(headersAndParagraphs);
 // // console.log(headersAndParagraphs[3].innerText);
+
+//-------
+//HTML LOCATION
+//-------
 
 // console.log(nav.children[0].children[0].children[0]);
 // console.log(headersAndParagraphs[0].nextElementSibling.nextElementSibling);
@@ -26,6 +34,10 @@
 // let box2 = box1.nextElementSibling;
 // let box3 = box2.nextElementSibling;
 
+//-------
+//ADD AND REMOVE CSS CLASS
+//-------
+
 // box1.classList.add("dark");
 // box1.classList.remove("dark")
 // box2.classList.add("light");
@@ -41,8 +53,16 @@
 // console.log(box3.classList.contains("light")) //false, porque no contiene esa clase
 // console.log(box2.classList.contains("light"));//True porque el toggle solo está una vez y está activo en el box 2 la clase light
 
+//-------
+//DATASET
+//-------
+
 // let number = document.querySelector("section").lastElementChild.previousElementSibling.dataset.boxNumber;
 // console.log(number);//devuelve los datos o referencias aportados en el html
+
+//-------
+//EDITING HTML FROM JS
+//-------
 
 // document.body.innerHTML = "<h1>Waw</h1>"
 // console.log(document.querySelector("section").innerHTML)
@@ -70,6 +90,10 @@
 // document.querySelector("h1").replaceWith(paragraph)//sustituido h1 por párrafo
 // paragraph.remove();
 
+//-------
+//GIVING CSS FROM JS
+//-------
+
 // let paragraph = document.querySelector("p");
 // //esto es como hacer CSS pero directamente desde js
 // paragraph.style.textAlign = "center";
@@ -81,9 +105,62 @@
 // console.log(paragraph.getAttribute("class"));//devuelve la clase margin
 // console.log(paragraph.style.cssText)//muestra todo el CSS de p en texto en la consola.
 
-document.body.addEventListener("click", () => alert("this is the body"))
-document.body.firstElementChild.addEventListener("click", () => alert("this is the section"))
-document.body.firstElementChild.firstElementChild.addEventListener("click", () => alert("this is the div"))
+//-------
+//PROPAGATION EXAMPLE
+//-------
+
+// document.body.addEventListener("click", () => alert("this is the body"))
+// document.body.firstElementChild.addEventListener("click", () => alert("this is the section"))
+// document.body.firstElementChild.firstElementChild.addEventListener("click", () => alert("this is the div"))
+
+//-------
+//EVENTLISTENER EXAMPLE
+//-------
+
+// document.body.addEventListener("click", () => {
+//     document.body.style.backgroundColor = "black"
+// });
+// document.body.addEventListener("click", () => {
+//     console.log("Hello World!")
+// });
+
+//-------
+//EVENTLISTENER AND TIMESTAMP
+//-------
+
+// let time1 = 0.0,
+// time2 = 0.0;
+// document.body.addEventListener("click", (e) => {
+//     document.body.style.background = "yellow";
+//     time1 = e.timeStamp;
+//     console.log(time1);
+//     console.log(e.currentTarget);
+// });
+// document.body.addEventListener("click", (e) => {
+//     console.log("Hello World!");
+//     time2= e.timeStamp;
+//     console.log(time2);
+// });
+// console.log(time1-time2);
+
+//-------
+//EVENT CANCELLATION
+//-------
+
+// console.log(document.forms[0]);
+// document.forms[0].onsubmit = (e) => e.preventDefault();
+
+//-------
+//DRAG AND DROP
+//-------
+
+// let droptarget = document.querySelector("#droptarget");
+// droptarget.addEventListener("dragover", (e) => {
+//     e.preventDefault();
+// });
+// droptarget.addEventListener("dragenter", (e) => {
+//     e.preventDefault()
+// })
 
 
 
