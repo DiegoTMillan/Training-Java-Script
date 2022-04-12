@@ -15,10 +15,24 @@ window.addEventListener("load", () => {
 //DOING EXERCISE
 //-------
 
+// const deleteTask = (event) => {
+//     let task = event.target.nextElementSibling;
+//     let text = task.innerHTML;
+//     if (text.includes("<del>")) {
+//       task.parentNode.parentNode.setAttribute("data-complete", "false");
+//       text = task.firstElementChild.textContent;
+//       task.innerHTML = text;
+//     } else {
+//       task.innerHTML = `<del>${text}</del>`;
+//       task.parentNode.parentNode.setAttribute("data-complete", "true");
+//     }
+//   };
+
     let showUnDone = document.querySelector("select").children[1];
     console.log(showUnDone)
-    showUnDone.addEventListener("click", () => {
+    showUnDone.addEventListener("click", (e) => {
         if (document.querySelector("tbody").firstElementChild.getAttribute("data-complete") === true){
+            e.preventDefault()
             document.querySelector("tbody").firstElementChild.classList.add("dismissible")
         }
     });
