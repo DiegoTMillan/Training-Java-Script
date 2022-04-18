@@ -3,13 +3,18 @@ window.addEventListener("load", () => {
     let id = 0;
     let text = "";
     let alert = document.querySelector(".alert");
+    // let arrayItems = new Array()
+    // console.log(document.getElementById(`0`).innerHTML)
+    // for (let i = 0; i < 10; i++) {
+    //   arrayItems += document.getElementById(i).innerHTML
+    //   console.log(arrayItems)
+    // }
   
     //function for close element alert
     let close = alert.firstElementChild;
     close.addEventListener("click", () => {
       alert.classList.add("dismissible");
     });
-    console.log(document.querySelector("tbody").firstElementChild)
     
 //-------
 //DOING EXERCISE
@@ -28,11 +33,13 @@ window.addEventListener("load", () => {
 //     }
 //   };
 
-    let showUnDone = document.querySelector("select").children[1];
-    console.log(showUnDone)
-    showUnDone.addEventListener("click", (e) => {
-        if (document.querySelector("tbody").firstElementChild.getAttribute("data-complete") === true){
-            e.preventDefault()
+
+    let selectElement = document.querySelector("select");
+    selectElement.addEventListener("change", (event) => {
+      let listItem = document.querySelector("tbody").firstElementChild.firstElementChild.innerHTML
+      let done = document.querySelector("select").children[1];
+      console.log(done)
+        if (event.target.value == "done" && listItem.includes("<del>")){
             document.querySelector("tbody").firstElementChild.classList.add("dismissible")
         }
     });

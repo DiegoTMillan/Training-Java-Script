@@ -44,14 +44,8 @@ h1 {
 header{
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
-}
-.right{
-  width: 50%;
-}
-.content-select{
-  appearance: none;
-  float:right;
 }
 .content-select select{
   text-align-last: center;
