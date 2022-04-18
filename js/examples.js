@@ -668,6 +668,208 @@
 // }
 // console.log(sum(2, 2));
 
-//---------------------JavaScript DOM-------------------------
+//-------
+//DESESTRUCTURACIÓN
+//-------
+
+// let numbers = [1, 2, 3, 4, 5];
+// let [a, b, ...parcial] = numbers; //a=1, b=2, parcial= 3,4,5
+// console.log([parcial]);
+// [, a] = [2, 4, 6]; //a=4, discard other values
+// console.log(a);
+// [a, b, c, d, e, ...h] = [2, 4, 6, 8, 10, 12, 14]; //values under 10 in a,b,c,d,e and h has 12 and 14
+// console.log(a, b, h);
+
+//desestructuración de un objeto
+
+// const hero = {
+//   character: "Doctor Strange",
+//   name: "Bendedict Cumberbatch",
+//   powers: {
+//     artifacts: ["eye of agamotto", "book of the vishanti", "orb of agamotto"],
+//     skills: ["judo", "magically conjured weapons"],
+//   },
+// };
+
+// const {
+//     character,
+//     powers: {artifacts, ...otherPowers},
+//     ...otherHeroInfo
+// } = hero;
+// console.log(hero)
+// console.log(character);
+// console.log(artifacts);
+// console.log(otherPowers);
+// console.log(otherHeroInfo);
+
+// const {
+//     name,
+//     powers:{ skills},
+    
+// } = hero
+// console.log(name, skills[0])
+
+//-------
+//JSON
+//-------
+//propósito de enviar datos a través de la red
+
+// let person = {
+//     id: 1,
+//     first_name: "John",
+//     last_name: "Doe",
+//     email: "john@google.com",
+// };
+
+// let jsonText = JSON.stringify(person);
+// console.log(jsonText)
+
+// let anotherPerson = JSON.parse(jsonText);
+// anotherPerson.first_name = "Jane";
+// anotherPerson.last_name = "Pérez"
+// anotherPerson.email = "jane@yahoo.es"
+// console.log(person);
+// console.log(anotherPerson);
+
+//-------
+//LOCALSTORAGE AND SESSIONSTORAGE
+//-------
+
+//LOCAL STORAGE
+
+// //web Storage
+// //localStorage
+// let userName = prompt('Please enter your name: ');
+// let phone = prompt('Please enter your phone: ');
+// //save info
+// localStorage.name = userName;
+// localStorage.phone = phone;
+// //query info
+// console.log(localStorage.name);
+// console.log(localStorage.phone);
+// localStorage.clear() // remove all properties of a storage object
+
+// //save and query objects
+// let data = {userName, phone};
+// localStorage.data = JSON.stringify(data);
+// console.log(JSON.parse(localStorage.data));
+// // getItem(), setItem(), and removeItem() methods are also avaiable to manage data
+// let token = 
+// localStorage.setItem("token", token);
+// console.log(localStorage.getItem("token"));
+// localStorage.removeItem("token";
+// console.log(localStorage.getItem("token"));
+
+// //saving dates
+// let loginDate = (new Date()).toUTCString();
+// let loginDate2 = (new Date()).toString(); //más fácil y sencillo
+// localStorage.loginDate = loginDate;
+// localStorage.loginDate2 = loginDate2;
+// console.log((new Date(Date.parse(localStorage.loginDate))));
+// console.log((new Date(Date.parse(localStorage.loginDate2))))
+// //check application tab in dev tools
+// localStorage.clear()
+
+
+//SESSIONSTORAGE
+//almacena la información mientras esté abierto el navegador. Hay que tener en cuenta
+//que los navegadores, hoy día son capaces de restaurar ventanas cerradas con lo que 
+//la información quedará guardada maś tiempo.
+
+//sessionStorage
+// let date = new Date()
+// let logginTime = 
+// date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+// sessionStorage.setItem("loggedAt", logginTime);
+// console.log(sessionStorage.getItem("loggedAt"));
+
+//ASYNCHRONOUS JAVASCRIPT 
+
+//synchrono
+
+ 
+// const sayHello = (userName) => {
+//     console.log("Hi " + userName);
+// };
+// const getUserName = (callback) => {
+//     let userName = prompt("Please, enter your name: ");
+//     callback(userName)
+// };
+// getUserName(sayHello)
+
+//es un ejemplo donde complicamos algo sencillo para ver un callback. Es una función que 
+//se le pasa a otra función cuando termina la segunda, devuelve el control a la primera
+//. Si es asíncrono esperará a que haya un evento para que el 
+//callback actúe. Así no se bloquean entre ellas
+
+//asynchronous callback
+// const countDown = () => {
+//     console.log("Ready?");
+//     let start = 0;
+//     let end = 0;
+//     // let count = 3;
+//     for (let i = 5, count = 1;  i >= 0; i--, count++) {
+//         start = new Date().getTime();
+//         console.log(start);
+//         setTimeout(() => {
+//             end = new Date().getTime();
+//             console.log(i===0 ? "GO!" : i);
+//             console.log(count);
+//             console.log(end-start, " ms");
+//         }, count * 1000);
+//     }
+// };
+// countDown()
+// console.log("Steady")
+
+//Callback hell
+
+// const countDownHell = () => {
+//     let start =5;
+//     setTimeout(()=> {
+//         console.log(start--);
+//         setTimeout(()=> {
+//             console.log(start--);
+//             setTimeout(()=> {
+//                 console.log(start--);
+//                 setTimeout(()=> {
+//                     console.log(start--);
+//                     setTimeout(()=> {
+//                         console.log(start--);
+//                         setTimeout(()=> {
+//                             console.log(start--);
+//                             setTimeout(()=> {
+//                                 console.log("Running");
+//                             },1000);
+//                         },1000);
+//                     },1000);
+//                 },1000);
+//             },1000);
+//         },1000)
+//     },1000); 
+//     };
+// countDownHell();
+
+//Promises
+//esquema de una promesa.
+
+let doSomeAsyncSTuff = () => 
+new Promise((resolve,reject) => {
+    if (done) {
+        //fullfilled
+        resolve(console.log("success"));
+    }else{
+        //rejected
+        reject(err.message)
+    }
+});
+
+
+let successPromise = new Promise((resolve, reject) => resolve("success!"));
+setTimeout(console.log, 0, successPromise)
+let errorPromise = new Promise((resolve, reject) => reject(new Error("something went wrong.")));
+setTimeout(console.log, 0 , errorPromise)
+
+
 
 
