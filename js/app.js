@@ -153,33 +153,33 @@
 //DRAG AND DROP
 //-------
 
-let div1 = document.querySelector("#Uno");
-let div2 = document.querySelector("#Dos");
+// let div1 = document.querySelector("#Uno");
+// let div2 = document.querySelector("#Dos");
 
-div1.addEventListener("dragstart", () => {
-  console.log("div1 dispara dragstart");
-});
-div1.addEventListener("drag", () => {
-  console.log("div1 dispara drag");
-});
-div1.addEventListener("dragend", () => {
-  console.log("div1 dispara dragend");
-});
+// div1.addEventListener("dragstart", () => {
+//   console.log("div1 dispara dragstart");
+// });
+// div1.addEventListener("drag", () => {
+//   console.log("div1 dispara drag");
+// });
+// div1.addEventListener("dragend", () => {
+//   console.log("div1 dispara dragend");
+// });
 
-div2.addEventListener("dragenter", (e) => {
-  console.log("div2 dispara dragenter");
-  e.preventDefault()
-});
-div2.addEventListener("dragover", (e) => {
-  console.log("div2 dispara dragover");
-  e.preventDefault()
-});
-div2.addEventListener("dragdrop", () => {
-  console.log("div2 dispara dragdrop");
-});
-div2.addEventListener("dragleave", () => {
-  console.log("div2 dispara dragleave");
-});
+// div2.addEventListener("dragenter", (e) => {
+//   console.log("div2 dispara dragenter");
+//   e.preventDefault()
+// });
+// div2.addEventListener("dragover", (e) => {
+//   console.log("div2 dispara dragover");
+//   e.preventDefault()
+// });
+// div2.addEventListener("dragdrop", () => {
+//   console.log("div2 dispara dragdrop");
+// });
+// div2.addEventListener("dragleave", () => {
+//   console.log("div2 dispara dragleave");
+// });
 
 // let droptarget = document.querySelector("#droptarget");
 // droptarget.addEventListener("dragover", (e) => {
@@ -188,3 +188,17 @@ div2.addEventListener("dragleave", () => {
 // droptarget.addEventListener("dragenter", (e) => {
 //   e.preventDefault();
 // });
+
+//-------
+//DESESTRUCTURACIÓN
+//-------
+
+let numbers = [1, 2, 3, 4, 5];
+let [a, b, ...parcial] = numbers;//a=1, b=2, parcial= 3,4,5
+console.log([parcial]);
+[ ,a] = [2, 4, 6];//a=4, discard other values
+console.log(a);
+[a, b, c, d, e,...h] = [2, 4, 6, 8, 10, 12, 14];
+console.log(h)
+
+
