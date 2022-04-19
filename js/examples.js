@@ -912,7 +912,9 @@
 // );
 // promise.then(() => alert("promise solved")).catch(error => console.log(error));
 
-//Async/Await
+//-------
+//ASYNC/AWAIT
+//-------
 
 // async function getNumber(n) {
 //     console.log(n);
@@ -978,6 +980,10 @@
 // console.log(1);
 // count();
 // console.log(3);
+
+//-------
+//NETWORKING
+//-------
 
 
 
