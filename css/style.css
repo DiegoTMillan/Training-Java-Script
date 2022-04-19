@@ -2,6 +2,7 @@
   font-family: "ds-digit";
   src: url("../fonts/DS-DIGI.TTF");
 }
+/*reset estilos navegador*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,6 +14,7 @@
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
 }
+/*pseudoselector elemento HTML*/
 :root {
   font-size: 0.785rem;
   font-family: "Rubik", sans-serif;
@@ -35,9 +37,9 @@ body {
   background-color: var(--black);
   background-image: url("../img/stadium-bg.png");
   background-position: center center;
-  background-size: 100% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
-  padding: 4em 2em;
   color: white;
   font-family: "Fredoka", sans-serif;
 }
@@ -47,13 +49,13 @@ body {
   margin: 5% auto;
 } */
 img.logo {
-  max-width: 150px;
+  max-width: 190px;
   height: auto;
-  margin-top: 7em;
+  margin-top: 3em;
 }
 
 .scoreboard {
-  width: 65%;
+  width: 45%;
   /* height: 15vh; */
   margin: -15px auto 0;
   position: relative;
@@ -92,7 +94,7 @@ img.logo {
   width: 30%;
   height: 90px;
   font-family: "ds-digit";
-  color: var(--red);
+  color: #FE0000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,6 +117,7 @@ img.logo {
   margin-bottom: 0.5em;
   display: block;
   font-size: 0.8rem;
+  font-weight: bold;
   color: white;
   font-family: "Fredoka", "sans-serif";
   /* height: 50%; */
@@ -129,8 +132,8 @@ img.logo {
   font-size: 3rem;
 }
 .display {
-  width: 80%;
-  min-height: 8vh;
+  width: 78%;
+  min-height: 4vh;
   margin: 1em auto;
   max-height: 200px;
   background-image: url("../img/display.png");
@@ -152,10 +155,26 @@ img.logo {
 .results div {
   width: 33%;
   text-align: center;
+  /* box-shadow: 0px 20px 10px 10px rgba(0, 0, 0, 0.2); */
+  position: relative;
+}
+
+.results div div {
+  position: absolute;
+  width: 40%;
+  height: 40px;
+  border-radius: 50%;
+  bottom: -1px;
+  left: 30%;
+  transform: scale(1, 0.6);
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  box-shadow: 0px -5px 27px 45px rgba(0, 0, 0, 0.8);
 }
 .results div img {
+  position: relative;
   width: 100%;
   height: auto;
+  z-index: 100;
 }
 .play {
   position: relative;
@@ -189,3 +208,4 @@ img.logo {
   background-color: var(--green);
   font-weight: bold;
 }
+
