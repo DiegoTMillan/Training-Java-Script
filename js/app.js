@@ -1,118 +1,104 @@
 window.addEventListener("load", () => {
-    //Adding variables
-    let id = 0;
-    let text = "";
-    let alert = document.querySelector(".alert");
-    // let arrayItems = new Array()
-    // console.log(document.getElementById(`0`).innerHTML)
-    // for (let i = 0; i < 10; i++) {
-    //   arrayItems += document.getElementById(i).innerHTML
-    //   console.log(arrayItems)
-    // }
-  
-    //function for close element alert
-    let close = alert.firstElementChild;
-    close.addEventListener("click", () => {
-      alert.classList.add("dismissible");
-    });
-    
-//-------
-//DOING EXERCISE
-//-------
+  //Adding variables
+  let id = 0;
+  let text = "";
+  let alert = document.querySelector(".alert");
 
-// const deleteTask = (event) => {
-//     let task = event.target.nextElementSibling;
-//     let text = task.innerHTML;
-//     if (text.includes("<del>")) {
-//       task.parentNode.parentNode.setAttribute("data-complete", "false");
-//       text = task.firstElementChild.textContent;
-//       task.innerHTML = text;
-//     } else {
-//       task.innerHTML = `<del>${text}</del>`;
-//       task.parentNode.parentNode.setAttribute("data-complete", "true");
-//     }
-//   };
+  //function for close element alert
+  let close = alert.firstElementChild;
+  close.addEventListener("click", () => {
+    alert.classList.add("dismissible");
+  });
 
+  let selectElement = document.querySelector("select");
+  let listItems = [document.body.querySelector("tbody").querySelectorAll("tr")];
 
-    let selectElement = document.querySelector("select");
-    selectElement.addEventListener("change", (event) => {
-      let listItem = document.querySelector("tbody").firstElementChild.firstElementChild.innerHTML
-      let done = document.querySelector("select").children[1];
-      console.log(done)
-        if (event.target.value == "done" && listItem.includes("<del>")){
-            document.querySelector("tbody").firstElementChild.classList.add("dismissible")
-        }
-    });
+  let task =
+    document.body.querySelector("tbody").firstElementChild.firstElementChild
+      .innerHTML;
+  console.log(task.includes("span"));
   
-    //function for get value input on focus
-    let input = document.querySelector("input");
-    input.addEventListener("focus", () => {
-      document.addEventListener("keypress", (event) => {
-        if (event.key === "Enter") {
-          event.preventDefault();
-        }
-      });
-    });
-  
-    //function where element arrow is clickable
-    let arrow = document.querySelector(".arrow");
-    arrow.addEventListener("click", (event) => {
-      if (input.value.trim() === "") {
+  if (task.includes("<del>")) {
+    task.parentNode.classList.add("done");
+  } else if (task.includes("del") == false){
+    task.parentNode.classList.add("undone")
+  }
+  console.log(listItems)
+  console.log(document.body.querySelector("tbody").firstElementChild.firstElementChild.parentNode)
+  selectElement.addEventListener("change", () => {
+    if (selectElement.value == "done") {
+      // document.querySelector("tbody").firstElementChild.classList.add("dismissible")
+    }
+  });
+
+  //function for get value input on focus
+  let input = document.querySelector("input");
+  input.addEventListener("focus", () => {
+    document.addEventListener("keypress", (event) => {
+      if (event.key === "Enter") {
         event.preventDefault();
-        input.value = "";
-        alert.classList.remove("dismissible");
-      } else {
-        text = input.value;
-        input.value = "";
-        id =
-          parseInt(
-            document.querySelector("tbody")?.lastElementChild?.getAttribute("id")
-          ) + 1 || 0;
-        document.querySelector("tbody").appendChild(generateRow(id, text));
       }
     });
-  
-    //function for task complete
-    let done = document.querySelectorAll(".fa-circle-check");
-    done.forEach((item) => {
-      item.addEventListener("click", (event) => {
-        deleteTask(event);
-      });
-    });
-  
-    //Enable user to edit task
-    let edit = document.querySelectorAll(".fa-pen");
-    edit.forEach((item)=>{
-      item.addEventListener("click", (event)=>{
-          editTask(event, false);
-      });
-    });
-  
-    let taskContent = document.querySelectorAll(".task");
-    taskContent.forEach((item)=>{
-      item.addEventListener("focus", (event)=>{
-          editTask(event, true);
-      });
-  
-      item.addEventListener("blur", (event)=>{
-          event.target.classList.remove("editable");
-      })
-    });
-  
-    
-    let trash = document.querySelectorAll(".fa-trash");
-    trash.forEach((item)=>{
-      item.addEventListener("click", (event)=>{
-          removeRow(event, false);
-      });
+  });
+
+  //function where element arrow is clickable
+  let arrow = document.querySelector(".arrow");
+  arrow.addEventListener("click", (event) => {
+    if (input.value.trim() === "") {
+      event.preventDefault();
+      input.value = "";
+      alert.classList.remove("dismissible");
+    } else {
+      text = input.value;
+      input.value = "";
+      id =
+        parseInt(
+          document.querySelector("tbody")?.lastElementChild?.getAttribute("id")
+        ) + 1 || 0;
+      document.querySelector("tbody").appendChild(generateRow(id, text));
+    }
+  });
+
+  //function for task complete
+  let done = document.querySelectorAll(".fa-circle-check");
+  done.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      deleteTask(event);
     });
   });
-  
-  //function to create new row
-  const generateRow = (id, text) => {
-    let newRow = document.createElement("tr");
-    newRow.setAttribute("id", id);
-    newRow.innerHTML = `
+
+  //Enable user to edit task
+  let edit = document.querySelectorAll(".fa-pen");
+  edit.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      editTask(event, false);
+    });
+  });
+
+  let taskContent = document.querySelectorAll(".task");
+  taskContent.forEach((item) => {
+    item.addEventListener("focus", (event) => {
+      editTask(event, true);
+    });
+
+    item.addEventListener("blur", (event) => {
+      event.target.classList.remove("editable");
+    });
+  });
+
+  let trash = document.querySelectorAll(".fa-trash");
+  trash.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      removeRow(event, false);
+    });
+  });
+});
+
+//function to create new row
+const generateRow = (id, text) => {
+  let newRow = document.createElement("tr");
+  newRow.setAttribute("id", id);
+  newRow.innerHTML = `
       <td>
           <i class="fa-solid fa-circle-check"></i>
           <span contenteditable="true" class="task">${text}</span>
@@ -130,75 +116,89 @@ window.addEventListener("load", () => {
       </span>
       </td>
       `;
-  
-      //Click icon check
-      newRow.firstElementChild.firstElementChild.addEventListener("click", (event)=>{
-          deleteTask(event);
-      });
-  
-      //Over text
-      newRow.firstElementChild.lastElementChild.addEventListener("click", (event)=>{
-          editTask(event,true);
-      });
-  
-      //Icon pen
-      newRow.firstElementChild.nextElementSibling.firstElementChild.addEventListener("click", (event)=>{
-          editTask(event,false);
-      });
-  
-      //Icon trash
-      newRow.lastElementChild.firstElementChild.addEventListener("click", (event)=>{
-          removeRow(event, false);
-      });
-  
-    return newRow;
-  };
-  
-  //function to complete task
-  const deleteTask = (event) => {
-    let task = event.target.nextElementSibling;
-    let text = task.innerHTML;
-    if (text.includes("<del>")) {
-      task.parentNode.parentNode.setAttribute("data-complete", "false");
-      text = task.firstElementChild.textContent;
-      task.innerHTML = text;
-    } else {
-      task.innerHTML = `<del>${text}</del>`;
-      task.parentNode.parentNode.setAttribute("data-complete", "true");
+
+  //Click icon check
+  newRow.firstElementChild.firstElementChild.addEventListener(
+    "click",
+    (event) => {
+      deleteTask(event);
     }
-  };
-  
-  //function to edit task
-  const editTask=(event, onFocus)=>{
-      if(onFocus===true){
-          let editable = event;
-          event.target.classList.add("editable");
-          document.addEventListener('keydown', (event)=>{
-              console.log(event.key);
-              if(event.key==="Escape"){
-                  if(editable.target.innerHTML.trim()===""){
-                      removeRow(editable, true);
-                  }
-                  event.target.classList.remove("editable");
-                  editable.target.blur();        
-              }
-          })
-      }else{
-          let editable = event.target.parentNode.parentNode.previousElementSibling.lastElementChild;
-          editable.classList.add("editable");
-          editable.focus();
-      }
+  );
+
+  //Over text
+  newRow.firstElementChild.lastElementChild.addEventListener(
+    "click",
+    (event) => {
+      editTask(event, true);
+    }
+  );
+
+  //Icon pen
+  newRow.firstElementChild.nextElementSibling.firstElementChild.addEventListener(
+    "click",
+    (event) => {
+      editTask(event, false);
+    }
+  );
+
+  //Icon trash
+  newRow.lastElementChild.firstElementChild.addEventListener(
+    "click",
+    (event) => {
+      removeRow(event, false);
+    }
+  );
+
+  return newRow;
+};
+
+//function to complete task
+const deleteTask = (event) => {
+  let task = event.target.nextElementSibling;
+  let text = task.innerHTML;
+  if (text.includes("<del>")) {
+    task.parentNode.parentNode.setAttribute("data-complete", "false");
+    text = task.firstElementChild.textContent;
+    task.innerHTML = text;
+  } else {
+    task.innerHTML = `<del>${text}</del>`;
+    task.parentNode.parentNode.setAttribute("data-complete", "true");
   }
-  
-  //Function to remove row
-  const removeRow = (event, editing)=>{
-      if(editing){
-          //remove when value == ""
-          event.target.parentNode.parentNode.remove();
-      }else{
-          //remove when click icon delete
-          event.target.parentNode.parentNode.parentNode.remove();
+};
+
+//function to edit task
+const editTask = (event, onFocus) => {
+  if (onFocus === true) {
+    let editable = event;
+    event.target.classList.add("editable");
+    document.addEventListener("keydown", (event) => {
+      console.log(event.key);
+      if (event.key === "Escape") {
+        if (editable.target.innerHTML.trim() === "") {
+          removeRow(editable, true);
+        }
+        event.target.classList.remove("editable");
+        editable.target.blur();
       }
+    });
+  } else {
+    let editable =
+      event.target.parentNode.parentNode.previousElementSibling
+        .lastElementChild;
+    editable.classList.add("editable");
+    editable.focus();
   }
-  
-  //hacer un filtro de busqueda con campo select donde exista las siguientes opciones All (por defecto), done, undone, segun la opcion seleccionada debe de aparecer las filas correspondiente de cada uno
+};
+
+//Function to remove row
+const removeRow = (event, editing) => {
+  if (editing) {
+    //remove when value == ""
+    event.target.parentNode.parentNode.remove();
+  } else {
+    //remove when click icon delete
+    event.target.parentNode.parentNode.parentNode.remove();
+  }
+};
+
+//hacer un filtro de busqueda con campo select donde exista las siguientes opciones All (por defecto), done, undone, segun la opcion seleccionada debe de aparecer las filas correspondiente de cada uno
