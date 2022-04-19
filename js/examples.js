@@ -853,22 +853,132 @@
 //Promises
 //esquema de una promesa.
 
-let doSomeAsyncSTuff = () => 
-new Promise((resolve,reject) => {
-    if (done) {
-        //fullfilled
-        resolve(console.log("success"));
-    }else{
-        //rejected
-        reject(err.message)
-    }
-});
+// let doSomeAsyncSTuff = () => 
+// new Promise((resolve,reject) => {
+//     if (done) {
+//         //fullfilled
+//         resolve(console.log("success"));
+//     }else{
+//         //rejected
+//         reject(err.message)
+//     }
+// });
 
+//Promise (resolved)
 
-let successPromise = new Promise((resolve, reject) => resolve("success!"));
-setTimeout(console.log, 0, successPromise)
-let errorPromise = new Promise((resolve, reject) => reject(new Error("something went wrong.")));
-setTimeout(console.log, 0 , errorPromise)
+// let successPromise = new Promise((resolve, reject) => resolve("success!"));
+// setTimeout(console.log, 0, successPromise)
+//Promise (rejected)
+
+// let errorPromise = new Promise((resolve, reject) => reject(new Error("something went wrong.")));
+// setTimeout(console.log, 0 , errorPromise)
+
+//Promise (pending)
+
+// let promise = new Promise(() => {});
+// setTimeout(console.log, 0, promise)
+
+//Promises - chaining with then()
+
+// //without then()
+// let promise1 = fetch("/api/movies");
+// //promise 1 , task 1
+// let promise2 = promise1.then(callback1);
+// //promise 2, task 2
+// let promise3 = promise2.then(callback2);
+
+// //chaining promises
+// const onResolved = (id) => {
+//     setTimeout(console.log, 0, id, "resolved");
+// };
+// const onRejected = (id) => {
+//     setTimeout(console.log, 0, id, "rejected")
+// };
+
+// let promise1 = new Promise((resolve,reject) => setTimeout(resolve, 1000));
+// let promise2 = new Promise((resolve,reject) => setTimeout(reject, 2000));
+// promise1.then(
+//     () => onResolved("promise1"),
+//     () => onRejected("promise1")
+// );
+// promise2.then(
+//     () => onResolved("promise2"),
+//     () => onRejected("promise2")
+// );
+
+// //catching promises
+
+// let promise = new Promise((resolve, reject) => setTimeout(reject(new Error("catching the error")),1000)
+// );
+// promise.then(() => alert("promise solved")).catch(error => console.log(error));
+
+//Async/Await
+
+// async function getNumber(n) {
+//     console.log(n);
+// };
+// const getNumber = async function (n) {
+//     console.log(n);
+// };
+
+// const getNumber = async () => {
+//     console.log(1);
+//     console.log(2)
+//     return 4;
+// };
+// getNumber().then(console.log);
+// console.log(3);
+
+//async/await
+
+//Can't catch rejected promises
+
+// const getNumber = async () => {
+//     console.log(1);
+//     Promise.reject(3);
+// };
+// //Uncaught (in promise) 3
+// getNumber().catch(console.log);
+// console.log(2);
+
+//Now the rejected promises can be catched
+
+// const getNumber = async () => {
+//     console.log(1);
+//     await Promise.reject(3);
+// };
+// getNumber().catch(console.log);
+// console.log(2);
+
+//Not allow
+
+// const sayHello = async () => {
+//     const sayHelloWorld = () => {
+//         return await Promise.resolve("Hello");
+//     };
+//     console.log(sayHelloWorld());
+// };
+
+//working as synchronous
+
+// const count = async () => {
+//     console.log(2);
+// };
+// console.log(1);
+// count();
+// console.log(3);
+
+//await make asynchronous the code
+
+// const count = async () => {
+//     console.log(2);
+//     await null;
+//     console.log(4);
+// };
+// console.log(1);
+// count();
+// console.log(3);
+
 
 
 
