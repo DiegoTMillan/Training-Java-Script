@@ -680,7 +680,7 @@
 // [a, b, c, d, e, ...h] = [2, 4, 6, 8, 10, 12, 14]; //values under 10 in a,b,c,d,e and h has 12 and 14
 // console.log(a, b, h);
 
-//desestructuración de un objeto
+// desestructuración de un objeto
 
 // const hero = {
 //   character: "Doctor Strange",
@@ -703,11 +703,9 @@
 // console.log(otherHeroInfo);
 
 // const {
-//     name,
-//     powers:{ skills},
-    
+//     powers:{ skills: [habilityOne, ]}, 
 // } = hero
-// console.log(name, skills[0])
+// console.log(habilityOne)
 
 //-------
 //JSON
@@ -868,7 +866,8 @@
 
 // let successPromise = new Promise((resolve, reject) => resolve("success!"));
 // setTimeout(console.log, 0, successPromise)
-//Promise (rejected)
+
+// // Promise (rejected)
 
 // let errorPromise = new Promise((resolve, reject) => reject(new Error("something went wrong.")));
 // setTimeout(console.log, 0 , errorPromise)
@@ -887,7 +886,7 @@
 // //promise 2, task 2
 // let promise3 = promise2.then(callback2);
 
-// //chaining promises
+//chaining promises
 // const onResolved = (id) => {
 //     setTimeout(console.log, 0, id, "resolved");
 // };
@@ -916,12 +915,16 @@
 //ASYNC/AWAIT
 //-------
 
+//lo mismo más clásico
+
 // async function getNumber(n) {
 //     console.log(n);
 // };
 // const getNumber = async function (n) {
 //     console.log(n);
 // };
+
+//opción más moderna
 
 // const getNumber = async () => {
 //     console.log(1);
@@ -970,7 +973,7 @@
 // count();
 // console.log(3);
 
-//await make asynchronous the code
+// await make asynchronous the code
 
 // const count = async () => {
 //     console.log(2);
@@ -985,6 +988,90 @@
 //NETWORKING
 //-------
 
+//Networking (fetch() + JSON Server)
+
+// window.addEventListener("load", () => {
+//     //Get all posts
+//     fetch("https://jsonplaceholder.typicode.com/posts/")
+//     .then((response) => response.json())
+//     .then((json) => console.log("trying get: ", json));
+//     //Get a specific post
+//     fetch("https://jsonplaceholder.typicode.com/posts/1")
+//     .then((response) => response.json())
+//     .then((json) => console.log(json))
+//     //Insert a new post
+//     fetch("https://jsonplaceholder.typicode.com/posts", {
+//         method: "POST",
+//         body: JSON.stringify({
+//             title: "foo",
+//             body: "bar",
+//             userId: 1,
+//         }),
+//         headers: {
+//             "content-type":
+//             "application/json; charset=UTF-8",
+//         },
+//     })
+//     .then((response) => response.json())
+//     .then((json) => {
+//         console.log("trying post: ", json)
+//     });
+//     //Update a post
+//     fetch("https://jsonplaceholder.typicode.com/posts/1", {
+//         method: "POST",
+//         body: JSON.stringify({
+//             title: "foo",
+//             body: "bar",
+//             userId: 1,
+//         }),
+//         headers: {
+//             "content-type":
+//             "application/json; charset=UTF-8",
+//         },
+//     })
+//     .then((response) => response.json())
+//     .then((json) => {
+//         console.log("trying put: ", json);
+
+//         fetch("https://jsonplaceholder.typicode.com/posts/1")
+//         .then((response) => response.json())
+//         .then((json) => console.log(json));
+//     });
+//     //deleting a post
+//     fetch("https://jsonplaceholder.typicode.com/posts/1", {
+//         method: "DELETE",
+//     });
+// });
+
+//Deeping into response object
+
+// fetch("https://jsonplaceholder.typicode.com/posts/1").then((response) => {
+//     console.log(response);
+//     console.log(response.status);
+//     console.log(response.statusText);
+//     console.log(response.ok);
+//     //another way to read the contents of a response
+//     response.text().then((data) => {
+//         console.log(JSON.parse(data));
+//     });
+// });
+
+//Full example
+
+// fetch("https://jsonplaceholder.typicode.com/posts/1")
+// .then((response) => {
+//     if(
+//         response.ok &&
+//         response.headers.get("Content-Type") === "application/json; charset=utf-8"
+//         ){
+//             return response.json();
+//          }else {
+//              console.log(response.headers.get("Content-Type"));
+//              throw new Error(`Unexpected status ${response.status} or content type`);
+//          }   
+// })
+// .then((data) => console.log(data))
+// .catch((error) => console.log(error));
 
 
 
