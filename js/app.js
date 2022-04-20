@@ -10,27 +10,6 @@ window.addEventListener("load", () => {
     alert.classList.add("dismissible");
   });
 
-  let selectElement = document.querySelector("select");
-  let listItems = [document.body.querySelector("tbody").querySelectorAll("tr")];
-
-  let task =
-    document.body.querySelector("tbody").firstElementChild.firstElementChild
-      .innerHTML;
-  console.log(task.includes("span"));
-  
-  if (task.includes("<del>")) {
-    task.parentNode.classList.add("done");
-  } else if (task.includes("del") == false){
-    task.parentNode.classList.add("undone")
-  }
-  console.log(listItems)
-  console.log(document.body.querySelector("tbody").firstElementChild.firstElementChild.parentNode)
-  selectElement.addEventListener("change", () => {
-    if (selectElement.value == "done") {
-      // document.querySelector("tbody").firstElementChild.classList.add("dismissible")
-    }
-  });
-
   //function for get value input on focus
   let input = document.querySelector("input");
   input.addEventListener("focus", () => {
@@ -200,5 +179,39 @@ const removeRow = (event, editing) => {
     event.target.parentNode.parentNode.parentNode.remove();
   }
 };
+
+
+//EJERCICIO
+
+//select
+let selectElement = document.querySelector("select");
+//array with tr's
+  let listItems = [document.body.querySelector("tbody").querySelectorAll("tr")];
+
+  //trying to use data set in every tr. Obviously with poor results
+  let task =
+    document.body.querySelector("tbody").firstElementChild.firstElementChild;
+  console.log(task.innerHTML);
+  console.log(task.parentNode)
+
+  let text1 = task.value;
+  if (text1.includes("<del>") == false) {
+    task.parentNode.setAttribute("data-set", "undone");
+  } else if (text1.includes("<del>")) {
+    task.parentNode.setAttribute("data-set", "done");
+  };
+
+  //filtered items
+  listItemsFiltered = listItems.filter( x => listItems.includes("done"))
+  console.log(listItemsFiltered)
+
+  //trying to do something...
+  selectElement.addEventListener("change", () => {
+    if (selectElement.value == "done" && listItemsFiltered.includes("done") ) {
+      document.body.querySelector("tbody").querySelector("tr").classList.add("dismissible")
+    }else if (selectElement.value == "undone" && listItemsFiltered.includes("undone") == false ){
+      document.querySelector("tbody").firstElementChild.classList.add("dismissible")
+    }
+  });
 
 //hacer un filtro de busqueda con campo select donde exista las siguientes opciones All (por defecto), done, undone, segun la opcion seleccionada debe de aparecer las filas correspondiente de cada uno

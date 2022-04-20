@@ -277,6 +277,7 @@ table .fa-circle-check:hover {
   opacity: 0 !important;
   height: 0 !important;
   padding: 0 !important;
+  display: none;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
