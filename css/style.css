@@ -12,7 +12,7 @@
   margin: 0;
   outline: 0;
   -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 /*pseudoselector elemento HTML*/
 :root {
@@ -48,39 +48,6 @@ body {
   height: 5vh;
   margin: 5% auto;
 } */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-.flipped {
-  transform-origin: 50% 50%;
-  transform: rotatex(-2160deg);
-  transition: all 1s ease 0s;
-}
 img.logo {
   max-width: 190px;
   height: auto;
@@ -127,7 +94,7 @@ img.logo {
   width: 30%;
   height: 90px;
   font-family: "ds-digit";
-  color: #FE0000;
+  color: #fe0000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,7 +126,7 @@ img.logo {
   background-image: url("../img/small-box.png");
   background-position: center center;
   background-size: 100% 100%;
-  width: 40%;
+  width: 60%;
   margin: 0.3em auto;
   height: 40px !important;
   font-size: 3rem;
@@ -200,7 +167,7 @@ img.logo {
   bottom: -1px;
   left: 30%;
   transform: scale(1, 0.6);
-  /* background-color: rgba(0, 0, 0, 0.4); */
+  background-color: rgba(0, 0, 0, 0.8);
   box-shadow: 0px -5px 27px 45px rgba(0, 0, 0, 0.8);
 }
 .results div img {
@@ -208,12 +175,14 @@ img.logo {
   width: 100%;
   height: auto;
   z-index: 100;
+  transform-style: preserve-3d;
+  transition: 1s;
 }
 .play {
   position: relative;
   width: 30%;
   margin: 2em auto;
-  padding: .4em;
+  padding: 0.4em;
   border: 1px solid white;
   border-radius: 0.7rem;
   display: flex;
@@ -221,7 +190,7 @@ img.logo {
 }
 .play div {
   width: 30%;
-  padding: .4em;
+  padding: 0.4em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -237,12 +206,55 @@ img.logo {
   top: -8px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background-color: var(--green);
   font-weight: bold;
 }
-.hidden{
+.flipped {
+  transform-origin: 50% 50%;
+  transform: rotatex(-2160deg);
+  transition: all 1s ease 0s;
+}
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  padding-top: 10em; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(22, 22, 20, 0.8); /* Black w/ opacity */
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.35s ease-in;
+}
+
+/* Modal Content */
+
+.modal-content {
+  background-color: #161614;
+  margin: auto;
+  padding: 2em;
+  border-radius: 0.5rem;
+  width: 80%;
+}
+.modal-content p {
+  font-size: 2.8rem;
+  margin-bottom: 0.5em;
+  text-transform: capitalize;
+  font-style: italic;
+}
+.modal-content button {
+  background-color: #910d13;
+  border-radius: 0.5rem;
+  color: white;
+  padding: 0.5em;
+  font-size: 1.5rem;
+}
+
+.hidden {
   visibility: hidden;
   opacity: 0;
 }
-

@@ -1,4 +1,5 @@
 window.addEventListener("load", () => {
+  console.log("working")
   //sounds selection
 
   let intro = new Audio("sounds/intro-music.mp3");
@@ -8,7 +9,7 @@ window.addEventListener("load", () => {
   let modal = document.querySelector(".modal");
   let startButton = document.querySelector(".modal-content").lastElementChild;
   let playerScore = document.querySelector(".row.bottom").firstElementChild;
-  let cpuScore = document.querySelector("row.bottom").lastElementChild;
+  let cpuScore = document.querySelector(".row.bottom").lastElementChild;
   let roundNumber = document.querySelector(".round");
   let display = document.querySelector(".display");
   let userMove =
@@ -23,7 +24,7 @@ window.addEventListener("load", () => {
 
   //button start
   startButton.addEventListener("click", () => {
-    modal.classlist.add("hidden");
+    modal.classList.add("hidden");
     intro.play();
   });
   userChoices.forEach((choice) => {
